@@ -100,6 +100,11 @@ namespace UITKsharp
             var uielement = new UISharpPopUpWindow(popupWindow);
             return uielement;
         }
+        public static UISharpRadioButton radioButtonElement(RadioButton popupWindow, bool defaultValue, string lblField = "")
+        {
+            var uielement = new UISharpRadioButton(popupWindow, defaultValue, lblField);
+            return uielement;
+        }
         private static void SampleSyntaxes()
         {
             var parentVisualElement = new VisualElement();
