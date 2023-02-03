@@ -30,4 +30,8 @@ Unpack/unzip it, then copy to your project's Asset folder
 
 # Note:
 Common functionality related to USS/UXML class was intentionaly not added for obvious reason.  
-Not fully tested!
+Not fully tested!  
+
+# TODO  
+Custom editor support  
+
