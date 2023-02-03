@@ -34,4 +34,4 @@ Not fully tested!
 
 # TODO  
 Custom editor support  
-
+Transitions  
