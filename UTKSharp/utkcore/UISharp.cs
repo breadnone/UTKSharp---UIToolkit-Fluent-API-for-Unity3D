@@ -143,7 +143,7 @@ namespace UITKsharp
             visualElement.style.alignItems = alignment;
             return this;
         }
-        public UISharp SetBorder(StyleColor color, float? width)
+        public UISharp SetBorder(StyleColor color, float width)
         {
             if (visualElement == null || color == null)
                 throw new System.Exception("UISharp : VisualElement and Color can't be null!");
