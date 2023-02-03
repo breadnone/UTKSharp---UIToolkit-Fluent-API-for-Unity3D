@@ -78,6 +78,49 @@ namespace UITKsharp
             return this;
         }
     }
+    public class UISharpRadioButton : UISharp
+    {
+        public RadioButton radioButton { get; set; }
+
+        public UISharpRadioButton(RadioButton radioElement, bool defaultValue, string labelText = "") : base(radioElement)
+        {
+            if (radioElement == null)
+                throw new Exception("UISharp : RadioButton element can't be null or empty");
+
+            radioButton = radioElement;
+            radioButton.text = labelText;
+            radioButton.value = defaultValue;
+        }
+
+        public UISharpRadioButton MarkDirtyRepaint()
+        {
+            radioButton.MarkDirtyRepaint();
+            return this;
+        }
+        public UISharpRadioButton SetLabelBcgColor(StyleColor color)
+        {
+            radioButton.labelElement.style.backgroundColor = color;
+            return this;
+        }
+        public UISharpRadioButton SetBinding(IBinding bindingObject)
+        {
+            radioButton.binding = bindingObject;
+            return this;
+        }
+        public UISharpRadioButton SetBindingPath(string bindingpath)
+        {
+            radioButton.bindingPath = bindingpath;
+            return this;
+        }
+        public UISharpRadioButton SetValueChangedEvent(Action<bool> callback)
+        {
+            radioButton.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+    }
     public class UISharpPopUpWindow : UISharp
     {
         public PopupWindow popupWindow { get; set; }
