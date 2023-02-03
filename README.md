@@ -23,6 +23,11 @@ Toggle
 Button  
 Image  
 (More to come)  
+
+# Installation  
+Download from release page(UTKSharp-v1.zip)  
+Unpack/unzip it, then copy to your project's Asset folder  
+
 # Note:
 Common functionality related to USS/UXML class was intentionaly not added for obvious reason.  
 Not fully tested!
