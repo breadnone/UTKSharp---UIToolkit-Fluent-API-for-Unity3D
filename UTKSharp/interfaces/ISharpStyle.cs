@@ -35,7 +35,7 @@ namespace UITKsharp
         public UISharp SetAlignContent(Align alignment);
         public UISharp SetAlignSelf(Align alignment);
         public UISharp SetAlignItems(Align alignment);
-        public UISharp SetBorder(StyleColor color, float? width);
+        public UISharp SetBorder(StyleColor color, float width);
         public UISharp SetVisibility(bool isVisible = true);
         public UISharp SetDisplay(DisplayStyle displayType);
         public UISharp SetFlexDirection(FlexDirection flexType);
