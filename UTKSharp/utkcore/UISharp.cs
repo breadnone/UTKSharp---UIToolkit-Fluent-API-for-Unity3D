@@ -153,14 +153,10 @@ namespace UITKsharp
             visualElement.style.borderTopColor = color;
             visualElement.style.borderBottomColor = color;
 
-            if (width.HasValue)
-            {
-                visualElement.style.borderLeftWidth = width.Value;
-                visualElement.style.borderRightWidth = width.Value;
-                visualElement.style.borderTopWidth = width.Value;
-                visualElement.style.borderBottomWidth = width.Value;
-            }
-
+            visualElement.style.borderLeftWidth = width;
+            visualElement.style.borderRightWidth = width;
+            visualElement.style.borderTopWidth = width;
+            visualElement.style.borderBottomWidth = width;
             return this;
         }
         public UISharp SetPosition(StyleEnum<Position> value)
