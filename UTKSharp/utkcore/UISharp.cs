@@ -40,11 +40,6 @@ namespace UITKsharp
             uievent.cachedVisualElement = visualElement;
             return uievent;
         }
-        public static UISharpCommonMethod execute(VisualElement visualElement)
-        {
-            var uicommon = new UISharpCommonMethod(visualElement);
-            return uicommon;
-        }
         public static UISharpDropDownField dropDownFieldElement(DropdownField dropdownField, List<string> list)
         {
             var uielement = new UISharpDropDownField(dropdownField, list);
@@ -104,6 +99,13 @@ namespace UITKsharp
         {
             var uielement = new UISharpPopUpWindow(popupWindow);
             return uielement;
+        }
+        private static void SampleSyntaxes()
+        {
+            var parentVisualElement = new VisualElement();
+            UTKSharp.style(new VisualElement()).SetBcgColor(Color.blue).SetParent(parentVisualElement);
+            UTKSharp.addEvent(new VisualElement()).SetOnMouseDown((x)=> Debug.Log("KeyPressed!"));
+            UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
         }
     }
 
