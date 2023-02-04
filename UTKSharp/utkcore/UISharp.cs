@@ -30,6 +30,18 @@ namespace UITKsharp
 {
     public static class UTKSharp
     {
+        /// <summary>Gets children in hierarchy</summary>
+        /// <param name="visualElement">The parent VisualElement to get the children.</param>
+        public static VisualElement[] GetChildren(VisualElement visualElement)
+        {
+            return UTKSharpElement.GetChildren(visualElement);
+        }
+        /// <summary>Gets direct parent in hierarchy</summary>
+        /// <param name="visualElement">The child VisualElement to get the parent.</param>
+        public static VisualElement GetParent(VisualElement visualElement)
+        {
+            return UTKSharpElement.GetParent(visualElement);
+        }
         /// <summary>Gets direct child from a parent VisualElement</summary>
         /// <param name="parent">The parent VisualElement.</param>
         /// <param name="childName">Child name to get from parent VisualElement</param>
@@ -695,6 +707,8 @@ namespace UITKsharp
 
             return this;
         }
+        /// <summary>Sets userData as object type.</summary>
+        /// <param name="userData">Left side margin value.</param>
         public UISharp SetUserData(System.Object userData)
         {
             if (visualElement == null)
@@ -706,6 +720,9 @@ namespace UITKsharp
             visualElement.userData = userData;
             return this;
         }
+        /// <summary>Sets the parent of VisualElement.</summary>
+        /// <param name="parent">Parent VisualElement.</param>
+        /// <param name="markDirtyRepaint">Dirties the layout to be repainted after reparenting.</param>
         public UISharp SetParent(VisualElement parent, bool markDirtyRepaint = false)
         {
             if (visualElement == null || parent == null)
@@ -718,6 +735,8 @@ namespace UITKsharp
 
             return this;
         }
+        /// <summary>Sets name property of a VisualElement.</summary>
+        /// <param name="name">Name of the VisualElement to be assigned.</param>
         public UISharp SetName(string name)
         {
             if (visualElement == null || String.IsNullOrEmpty(name))
@@ -725,6 +744,12 @@ namespace UITKsharp
 
             visualElement.name = name;
             return this;
+        }
+        /// <summary>Return the VisualElement that's being instantiated. Must be used at the very end of the method chain.</summary>
+        /// <param name="name">Name of the VisualElement to be assigned.</param>
+        public VisualElement Return()
+        {
+            return visualElement;
         }
     }
     public static class UTKSharpElement
