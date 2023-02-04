@@ -4,9 +4,9 @@ Fluent api for UIToolkit completely written in c#. No USS/UXML needed!
 # How-To:
 Add a refernce to UITKSharp namespace `using UITKsharp;`
 
-Styling `UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement);`  
-Event `UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`  
-UIElement `UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);`  
+Styling `UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement);`<br><br/>
+Event `UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br><br/>
+UIElement `UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);`<br><br/>
 
 # Supported UIElements
 VisualElement  
