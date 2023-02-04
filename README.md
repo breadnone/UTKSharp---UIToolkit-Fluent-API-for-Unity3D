@@ -6,7 +6,7 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
 
 **Styling**<br>`UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement);`<br/>  
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
-**UIElement**<br>`UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetWidth(100, dynamic: true);`<br/>  
+**UIElement**<br>`UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, true).SetWidth(100, true);`<br/>  
 
 # Supported UIElements
 VisualElement  
