@@ -62,7 +62,7 @@ namespace UITKsharp
         public UISharp SetEnabled(bool enable = true);
         public UISharp SetWhiteSpace(StyleEnum<WhiteSpace> whiteSpace);
         public UISharp SetTranslate(StyleTranslate styleTranslate);
-        public UISharp SetBackgroundImageTint(StyleBackground color);
+        public UISharp SetBcgImageTint(StyleBackground color);
         public UISharp SetBcgScaleMode(StyleEnum<ScaleMode> scaleMode);
         public UISharp SetWordSpacing(StyleLength spacing);
         public UISharp SetText(string value, bool ignoreTypeMismatchError = true);
