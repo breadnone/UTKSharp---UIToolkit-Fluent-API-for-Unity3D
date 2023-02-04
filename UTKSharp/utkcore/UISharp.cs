@@ -754,11 +754,15 @@ namespace UITKsharp
     }
     public static class UTKSharpElement
     {
+        private static VisualElement cachedElement;
+        public static UISharp style {get{return new UISharp(cachedElement);}}
+
         public static VisualElement GetParent(VisualElement visualElement)
         {
             if (visualElement == null)
                 throw new System.Exception("UISharp : VisualElement can't be null!");
-
+            
+            cachedElement = visualElement;
             return visualElement.parent;
         }
         public static VisualElement GetChild(VisualElement visualElement, string childName, string utkId)
@@ -768,6 +772,8 @@ namespace UITKsharp
 
             if (visualElement.childCount == 0)
                 return null;
+            
+            cachedElement = visualElement;
 
             foreach (var child in visualElement.Children())
             {
@@ -788,6 +794,7 @@ namespace UITKsharp
             if (visualElement == null)
                 throw new System.Exception("UISharp : VisualElement can't be null!");
 
+            cachedElement = visualElement;
             return visualElement.childCount;
         }
         public static VisualElement[] GetChildren(VisualElement visualElement)
@@ -795,6 +802,7 @@ namespace UITKsharp
             if (visualElement == null)
                 throw new System.Exception("UISharp : VisualElement can't be null!");
 
+            cachedElement = visualElement;
             return visualElement.Children().ToArray();
         }
     }
