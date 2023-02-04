@@ -36,8 +36,7 @@ namespace UITKsharp
         }
         public static UIEvent addEvent(VisualElement visualElement)
         {
-            var uievent = new UIEvent();
-            uievent.cachedVisualElement = visualElement;
+            var uievent = new UIEvent(visualElement);
             return uievent;
         }
         public static UISharpDropDownField dropDownFieldElement(DropdownField dropdownField, List<string> list)
@@ -119,7 +118,7 @@ namespace UITKsharp
         public string UISharpID { get; set; }
         public VisualElement visualElement { get; set; }
 
-        public UISharp(VisualElement visualelement)
+        public UISharp(VisualElement visualelement): base(visualelement)
         {
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             visualElement = visualelement;
@@ -640,7 +639,12 @@ namespace UITKsharp
 
     public class UIEvent : ISharpEvent
     {
-        public VisualElement cachedVisualElement { get; set; }
+        private VisualElement cachedVisualElement;
+        
+        public UIEvent(VisualElement vis)
+        {
+            cachedVisualElement = vis;
+        }
 
         public UIEvent SetOnKeyDown(Action<KeyDownEvent> evt)
         {
