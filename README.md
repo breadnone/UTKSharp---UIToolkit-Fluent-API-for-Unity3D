@@ -36,3 +36,4 @@ Not fully tested!
 # TODO  
 Custom editor support  
 Transitions  
+Expose more apis. Curently it's limited to common ones(Most that I often work with)
