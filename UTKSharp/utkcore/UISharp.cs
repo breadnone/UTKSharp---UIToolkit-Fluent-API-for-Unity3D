@@ -26,6 +26,33 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
+//VisualElement visualElement = new VisualElement();
+//var parentVisualElement = new VisualElement();
+//Sets style                ::  UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement).SetName("childAsName");
+//Adds Event                ::  UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("KeyPressed!"));
+//Instantiate Box element   ::  UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
+//Gets child                ::  parentVisualElement = UTKSharp.GetChild(parentVisualElement, "childAsName");
+//Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).SetName("viInstance").Return();
+
+/* UTKSharp.construct
+var parentOne = new VisualElement(); var childOne = new VisualElement();
+var parentTwo = new VisualElement(); var childTwo = new VisualElement();
+
+//Constructing layout based on the method chain
+UTKSharp.construct().Parent(parentOne).Child(childOne).Child(childOne).Parent(parentTwo).Child(childTwo);
+
+//Returns root of a hierarchy
+var getRoot = UTKSharp.construct().Parent(parentOne).Child(childTwo).ReturnRoot();
+
+//Parent as root, or else the default will be created
+UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
+
+//GetElement method to get the reference to visualElement in the current chain
+var childOne = new VisualElement();
+var childTwo = new VisualElement();
+UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
+*///////////////////
+
 namespace UITKsharp
 {
     public static class UTKSharp
@@ -34,7 +61,7 @@ namespace UITKsharp
         {
             return new UISharpConstruct(restricTive);
         }
-        
+
         /// <summary>Gets children in hierarchy</summary>
         /// <param name="visualElement">The parent VisualElement to get the children.</param>
         public static VisualElement[] GetChildren(VisualElement visualElement)
@@ -109,7 +136,7 @@ namespace UITKsharp
             var uielement = new UISharpListView(listView, itemSource, makeItem, bindItem, height);
             return uielement;
         }
-        
+
         /// <summary>Instantiates ScrollView UIElement.</summary>
         /// <param name="listView">The instance of the ScrollView.</param>
         /// <param name="items">Array to be shown in a ScrollView</param>
@@ -126,7 +153,7 @@ namespace UITKsharp
             var uielement = new UISharpImage(image);
             return uielement;
         }
-        
+
         /// <summary>Instantiates Button UIElement.</summary>
         /// <param name="button">The instance of the Button.</param>
         public static UISharpButton buttonElement(Button button)
@@ -194,42 +221,11 @@ namespace UITKsharp
             var uielement = new UISharpRadioButton(radioButton, defaultValue, lblField);
             return uielement;
         }
-
-        private static void SampleSyntaxes()
-        {
-            //VisualElement visualElement = new VisualElement();
-            //var parentVisualElement = new VisualElement();
-            //Sets style                ::  UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement).SetName("childAsName");
-            //Adds Event                ::  UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("KeyPressed!"));
-            //Instantiate Box element   ::  UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
-            //Gets child                ::  parentVisualElement = UTKSharp.GetChild(parentVisualElement, "childAsName");
-            //Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).SetName("viInstance").Return();
-
-            /* UTKSharp.construct
-            var parentOne = new VisualElement(); var childOne = new VisualElement();
-            var parentTwo = new VisualElement(); var childTwo = new VisualElement();
-
-            //Constructing layout based on the method chain
-            UTKSharp.construct().Parent(parentOne).Child(childOne).Child(childOne).Parent(parentTwo).Child(childTwo);
-            
-            //Returns root of a hierarchy
-            var getRoot = UTKSharp.construct().Parent(parentOne).Child(childTwo).ReturnRoot();
-
-            //Parent as root, or else the default will be created
-            UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
-
-            //GetElement method to get the reference to visualElement in the current chain
-            var childOne = new VisualElement();
-            var childTwo = new VisualElement();
-            UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
-            *///////////////////
-
-        }
     }
     public class UISharpConstruct
     {
-        public string UISharpID {get;set;}
-        private VisualElement root{get;set;}
+        public string UISharpID { get; set; }
+        private VisualElement root { get; set; }
         private List<(VisualElement visualElement, string visName, int? id)> elements = new List<(VisualElement visualElement, string visName, int? id)>();
         private bool startIsParent = false;
         private VisualElement currentParent;
@@ -241,7 +237,7 @@ namespace UITKsharp
 
         public void Root()
         {
-            if(root == null)
+            if (root == null)
             {
                 root = new VisualElement();
                 root.name = "UTKrootElement";
@@ -252,45 +248,45 @@ namespace UITKsharp
 
         public UISharpConstruct Parent(VisualElement parentVisualElement, string parentName = "", int? id = null, bool asRoot = false)
         {
-            if(!startIsParent)
+            if (!startIsParent)
             {
                 startIsParent = true;
 
-                if(!asRoot)
+                if (!asRoot)
                     root.Add(parentVisualElement);
                 else
                     root = parentVisualElement;
             }
-                
-            if(String.IsNullOrEmpty(parentName) && !id.HasValue)
+
+            if (String.IsNullOrEmpty(parentName) && !id.HasValue)
                 throw new Exception("UTKSharp : Either parentName or id must be filled!");
 
-            if(parentVisualElement == null)
+            if (parentVisualElement == null)
                 throw new Exception("UTKSharp : Parent VisualElement can't be null");
 
-            if(id.HasValue && !elements.Exists(x => x.id == id.Value))
+            if (id.HasValue && !elements.Exists(x => x.id == id.Value))
             {
                 elements.Add((parentVisualElement, null, id.Value));
             }
-            else if(!String.IsNullOrEmpty(parentName) && !elements.Exists(x => x.visName == parentName))
+            else if (!String.IsNullOrEmpty(parentName) && !elements.Exists(x => x.visName == parentName))
             {
                 elements.Add((parentVisualElement, parentName, null));
             }
 
             currentParent = parentVisualElement;
 
-            if(root != parentVisualElement && !root.Contains(parentVisualElement))
+            if (root != parentVisualElement && !root.Contains(parentVisualElement))
                 root.Add(parentVisualElement);
 
             return this;
         }
-        
+
         public UISharpConstruct Child(VisualElement childElement, string childName = "", int? id = null, bool setAsparent = false)
         {
-            if(!startIsParent)
+            if (!startIsParent)
                 throw new Exception("UTKsharp : The sequence/chain must be started with Parent method. e.g: Parent(parentVisualElement).Child(childVisualElement)...etc.");
-            
-            if(!currentParent.Contains(childElement))
+
+            if (!currentParent.Contains(childElement))
             {
                 currentParent.Add(childElement);
             }
@@ -299,32 +295,32 @@ namespace UITKsharp
                 throw new Exception("UTKSharp : Child already parented to the same parent VisualElement");
             }
 
-            if(setAsparent)
+            if (setAsparent)
                 currentParent = childElement;
 
-            if(!elements.Exists(x => x.visualElement == childElement))
+            if (!elements.Exists(x => x.visualElement == childElement))
             {
-                if(id.HasValue)
+                if (id.HasValue)
                     elements.Add((childElement, childName, id.Value));
                 else
                     elements.Add((childElement, childName, null));
             }
-                
+
             return this;
         }
 
         public UISharpConstruct GetElementAsParent(string name, int? id = null)
         {
-            if(!String.IsNullOrEmpty(name))
+            if (!String.IsNullOrEmpty(name))
             {
                 currentParent = elements.Find(x => x.visName == name).visualElement;
             }
-            else if(id.HasValue)
+            else if (id.HasValue)
             {
                 currentParent = elements.Find(x => x.id == id.Value).visualElement;
             }
 
-            if(currentParent == null)
+            if (currentParent == null)
                 throw new Exception("UTKSharp : Parent can't be found! Make sure the name/id is correct!");
 
             return this;
@@ -343,7 +339,7 @@ namespace UITKsharp
         /// <summary>The VisualElement</summary>
         public VisualElement visualElement { get; set; }
 
-        public UISharp(VisualElement visualelement): base(visualelement)
+        public UISharp(VisualElement visualelement) : base(visualelement)
         {
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             visualElement = visualelement;
@@ -962,7 +958,7 @@ namespace UITKsharp
             if (visualElement == null || scaleMode == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
 
-            visualElement.style.unityBackgroundScaleMode= scaleMode;
+            visualElement.style.unityBackgroundScaleMode = scaleMode;
             return this;
         }
 
@@ -973,7 +969,7 @@ namespace UITKsharp
             if (visualElement == null || styleFont == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
 
-            visualElement.style.unityFont= styleFont;
+            visualElement.style.unityFont = styleFont;
             return this;
         }
 
@@ -1118,13 +1114,13 @@ namespace UITKsharp
     public static class UTKSharpElement
     {
         private static VisualElement cachedElement;
-        public static UISharp style {get{return new UISharp(cachedElement);}}
+        public static UISharp style { get { return new UISharp(cachedElement); } }
 
         public static VisualElement GetParent(VisualElement visualElement)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
-            
+
             cachedElement = visualElement;
             return visualElement.parent;
         }
@@ -1135,7 +1131,7 @@ namespace UITKsharp
 
             if (visualElement.childCount == 0)
                 return null;
-            
+
             cachedElement = visualElement;
 
             foreach (var child in visualElement.Children())
@@ -1173,9 +1169,9 @@ namespace UITKsharp
             return visualElement.hierarchy;
         }
     }
-    public class UISharpCommonMethod : ISharpCommonMethod 
-    { 
-        public VisualElement visualElement{get;set;}
+    public class UISharpCommonMethod : ISharpCommonMethod
+    {
+        public VisualElement visualElement { get; set; }
 
         public UISharpCommonMethod(VisualElement element)
         {
@@ -1186,7 +1182,7 @@ namespace UITKsharp
     public class UIEvent : ISharpEvent
     {
         private VisualElement cachedVisualElement;
-        
+
         public UIEvent(VisualElement vis)
         {
             cachedVisualElement = vis;
@@ -1280,11 +1276,11 @@ namespace UITKsharp
             });
             return this;
         }
-        public UIEvent ScheduleExecute(VisualElement visualElementToBeWaited,  Action callback, int delay = 0)
+        public UIEvent ScheduleExecute(VisualElement visualElementToBeWaited, Action callback, int delay = 0)
         {
             if (cachedVisualElement == null || visualElementToBeWaited == null)
                 throw new System.Exception("UTKSharp : VisualElements can't be null!");
-            
+
             cachedVisualElement.schedule.Execute(x =>
             {
                 callback.Invoke();
