@@ -226,6 +226,10 @@ namespace UITKsharp
             return uielement;
         }
     }
+    
+    /// <summary>Layouting class.</summary>
+    /// <param name="customRoot">Custom root to be used instead of default</param>
+    /// <param name="restrictive">Supress warnings.</param>
     public class UISharpConstruct
     {
         public string UISharpID { get; set; }
@@ -234,23 +238,19 @@ namespace UITKsharp
         private bool startIsParent = false;
         private VisualElement currentParent;
 
+        /// <summary>Layouting class.</summary>
+        /// <param name="customRoot">Custom root to be used instead of default</param>
+        /// <param name="restrictive">Supress warnings.</param>
         public UISharpConstruct(VisualElement customRoot = null, bool restrictive = false)
         {
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             root = customRoot;
         }
-
-        public void Root()
-        {
-            if (root == null)
-            {
-                root = new VisualElement();
-                root.name = "UTKrootElement";
-            }
-            else
-                throw new Exception("UTKSharp : Root already existed. Only 1 root can be existed in one instance");
-        }
-
+        
+        /// <summary>Parent VisualElement that will be assigned to a child in the next chain.</summary>
+        /// <param name="parentName">Name identifier for the parent</param>
+        /// <param name="id">Unique identifier for the parent.</param>
+        /// <param name="asRoot">Acts as root.</param>
         public UISharpConstruct Parent(VisualElement parentVisualElement, string parentName = "", int? id = null, bool asRoot = false)
         {
             if (!startIsParent)
@@ -286,6 +286,10 @@ namespace UITKsharp
             return this;
         }
 
+        /// <summary>Child VisualElement that will be assigned to a parent int the prev chain.</summary>
+        /// <param name="childName">Name identifier for the child</param>
+        /// <param name="id">Unique identifier for the child.</param>
+        /// <param name="setAsParent">Acts as parent.Default is false</param>
         public UISharpConstruct Child(VisualElement childElement, string childName = "", int? id = null, bool setAsparent = false)
         {
             if (!startIsParent)
@@ -314,7 +318,10 @@ namespace UITKsharp
             return this;
         }
 
-        public UISharpConstruct GetElementAsParent(string name, int? id = null)
+        /// <summary>Gets VisualElement that will act as parent regardless their previous position in this chain.</summary>
+        /// <param name="name">Get by name(must be assigned previously). The default behavior.</param>
+        /// <param name="id">Get by id(must be assigned previously).</param>
+        public UISharpConstruct GetAsParent(string name, int? id = null)
         {
             if (!String.IsNullOrEmpty(name))
             {
@@ -330,10 +337,15 @@ namespace UITKsharp
 
             return this;
         }
-
+        /// <summary>Returns the root VisualElement.</summary>
         public VisualElement ReturnRoot()
         {
             return root;
+        }
+        /// <summary>Returns the children of the root.</summary>
+        public VisualElement[] ReturnChildren()
+        {
+            return root.Children().ToArray();
         }
     }
     public class UISharp : UIEvent, ISharpStyle, ISharpCommonMethod
