@@ -201,7 +201,7 @@ namespace UITKsharp
         }
 
         /// <summary>Instantiates Box UIElement.</summary>
-        /// <param name="box">The instance of the Box.</param>
+        /// <param name="box">The Box object.</param>
         public static UISharpBox boxElement(Box box)
         {
             var uielement = new UISharpBox(box);
@@ -209,7 +209,7 @@ namespace UITKsharp
         }
 
         /// <summary>Instantiates PopUpWindow UIElement.</summary>
-        /// <param name="popupWindow">The instance of the PopUpWindow.</param>
+        /// <param name="popupWindow">The PopUpWindow object.</param>
         public static UISharpPopUpWindow popUpWindowElement(PopupWindow popupWindow)
         {
             var uielement = new UISharpPopUpWindow(popupWindow);
@@ -226,7 +226,7 @@ namespace UITKsharp
             return uielement;
         }
     }
-    
+
     /// <summary>Layouting class.</summary>
     /// <param name="customRoot">Custom root to be used instead of default</param>
     /// <param name="restrictive">Supress warnings.</param>
