@@ -62,8 +62,6 @@ namespace UITKsharp
         public UISharp SetEnabled(bool enable = true);
         public UISharp SetWhiteSpace(StyleEnum<WhiteSpace> whiteSpace);
         public UISharp SetTranslate(StyleTranslate styleTranslate);
-        public UISharp SetBcgImageTint(StyleBackground color);
-        public UISharp SetBcgScaleMode(StyleEnum<ScaleMode> scaleMode);
         public UISharp SetWordSpacing(StyleLength spacing);
         public UISharp SetText(string value, bool ignoreTypeMismatchError = true);
         public UISharp SetTransformOrigin(StyleTransformOrigin transformOrigin);
@@ -71,5 +69,22 @@ namespace UITKsharp
         public UISharp SetTransitionDuration(StyleList<TimeValue> value);
         public UISharp SetTransitionProperty(StyleList<StylePropertyName> value);
         public UISharp SetTransitionTiming(StyleList<EasingFunction> easeValue);
+        
+        //Unity sets
+        public UISharp SetUBcgImageTint(StyleColor color);
+        public UISharp SetUBcgScaleMode(StyleEnum<ScaleMode> scaleMode);
+        public UISharp SetUFont(StyleFont font);
+        public UISharp SetUFontDefinition(StyleFontDefinition styleFontDefinition);
+        public UISharp SetUFontStyleAndWeight(StyleEnum<FontStyle> fontStyle);
+        public UISharp SetUOverflowClipbox(StyleEnum<OverflowClipBox> overflowClipBox);
+        public UISharp SetUParagraphSpacing(StyleLength styleLength);
+        public UISharp SetUSliceLeft(StyleInt styleInt);
+        public UISharp SetUSliceRight(StyleInt styleInt);
+        public UISharp SetUSliceTop(StyleInt styleInt);
+        public UISharp SetUSliceBottom(StyleInt styleInt);
+        public UISharp SetUTextAlign(StyleEnum<TextAnchor> alignment);
+        public UISharp SetUTextOutlineColor(StyleColor color);
+        public UISharp SetUTextOutlineWidth(StyleFloat fontSize);
+        public UISharp SetUTextOverflowPosition(StyleEnum<TextOverflowPosition> textOverflowPosition);
     }
 }

@@ -741,9 +741,159 @@ namespace UITKsharp
         public UISharp SetName(string name)
         {
             if (visualElement == null || String.IsNullOrEmpty(name))
-                throw new System.Exception("UTKSharp : VisualElement and VisualElement's name can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
 
             visualElement.name = name;
+            return this;
+        }
+        /// <summary>Tints image background.</summary>
+        /// <param name="styleBackground">StyleColor to be assigned.</param>
+        public UISharp SetUBcgImageTint(StyleColor styleBackground)
+        {
+            if (visualElement == null || styleBackground == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityBackgroundImageTintColor = styleBackground;
+            return this;
+        }
+        /// <summary>Background scale mode.</summary>
+        /// <param name="scaleMode">ScaleMode value to be assigned.</param>
+        public UISharp SetUBcgScaleMode(StyleEnum<ScaleMode> scaleMode)
+        {
+            if (visualElement == null || scaleMode == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityBackgroundScaleMode= scaleMode;
+            return this;
+        }
+        /// <summary>Sets custom font.</summary>
+        /// <param name="styleFont">Font type to be assigned.</param>
+        public UISharp SetUFont(StyleFont styleFont)
+        {
+            if (visualElement == null || styleFont == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityFont= styleFont;
+            return this;
+        }
+        /// <summary>Sets custom font.</summary>
+        /// <param name="fontDefinition">Font type to be assigned.</param>
+        public UISharp SetUFontDefinition(StyleFontDefinition fontDefinition)
+        {
+            if (visualElement == null || fontDefinition == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityFontDefinition = fontDefinition;
+            return this;
+        }
+        /// <summary>Sets font's style and weight.</summary>
+        /// <param name="fontStyle">FontStyle type to be assigned.</param>
+        public UISharp SetUFontStyleAndWeight(StyleEnum<FontStyle> fontStyle)
+        {
+            if (visualElement == null || fontStyle == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityFontStyleAndWeight = fontStyle;
+            return this;
+        }
+        /// <summary>Sets clipbox overflow mode.</summary>
+        /// <param name="overflowClipbox">OverflowClipbox styleEnum to be assigned.</param>
+        public UISharp SetUOverflowClipbox(StyleEnum<OverflowClipBox> overflowClipbox)
+        {
+            if (visualElement == null || overflowClipbox == null)
+                throw new System.Exception("UTKSharp :VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityOverflowClipBox = overflowClipbox;
+            return this;
+        }
+        /// <summary>Sets paragraph spacing.</summary>
+        /// <param name="styleLength">Paragraph spacing value to be assigned.</param>
+        public UISharp SetUParagraphSpacing(StyleLength styleLength)
+        {
+            if (visualElement == null || styleLength == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityParagraphSpacing = styleLength;
+            return this;
+        }
+        /// <summary>Sets left slice.</summary>
+        /// <param name="value">Left slice value assigned.</param>
+        public UISharp SetUSliceLeft(StyleInt value)
+        {
+            if (visualElement == null || value == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unitySliceLeft = value;
+            return this;
+        }
+        /// <summary>Sets right slice.</summary>
+        /// <param name="value">Right slice value to be assigned.</param>
+        public UISharp SetUSliceRight(StyleInt value)
+        {
+            if (visualElement == null || value == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unitySliceRight = value;
+            return this;
+        }
+        /// <summary>Sets top slice.</summary>
+        /// <param name="overflowClipbox">Top slice value to be assigned.</param>
+        public UISharp SetUSliceTop(StyleInt value)
+        {
+            if (visualElement == null || value == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unitySliceLeft = value;
+            return this;
+        }
+        /// <summary>Sets bottom slice.</summary>
+        /// <param name="overflowClipbox">Bottom slice value to be assigned.</param>
+        public UISharp SetUSliceBottom(StyleInt value)
+        {
+            if (visualElement == null || value == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unitySliceBottom = value;
+            return this;
+        }
+        /// <summary>Sets text alignment.</summary>
+        /// <param name="alignment">Text alignment mode.</param>
+        public UISharp SetUTextAlign(StyleEnum<TextAnchor> alignment)
+        {
+            if (visualElement == null || alignment == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityTextAlign = alignment;
+            return this;
+        }
+        /// <summary>Sets text outline color.</summary>
+        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        public UISharp SetUTextOutlineColor(StyleColor color)
+        {
+            if (visualElement == null || color == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityTextOutlineColor = color;
+            return this;
+        }
+        /// <summary>Sets text outline color.</summary>
+        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        public UISharp SetUTextOutlineWidth(StyleFloat widthSize)
+        {
+            if (visualElement == null || widthSize == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityTextOutlineWidth = widthSize;
+            return this;
+        }
+        /// <summary>Sets bottom slice.</summary>
+        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        public UISharp SetUTextOverflowPosition(StyleEnum<TextOverflowPosition> overflowPosition)
+        {
+            if (visualElement == null || overflowPosition == null)
+                throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
+
+            visualElement.style.unityTextOverflowPosition = overflowPosition;
             return this;
         }
         /// <summary>Return the VisualElement that's being instantiated. Must be used at the very end of the method chain.</summary>
