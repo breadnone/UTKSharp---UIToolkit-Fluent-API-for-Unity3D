@@ -23,8 +23,10 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
             UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
             
             //GetElement method to retrieve VisualElement tagged by id/name in the current chain
+            
             var childOne = new VisualElement();
             var childTwo = new VisualElement();
+            
             UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
 ```
 
