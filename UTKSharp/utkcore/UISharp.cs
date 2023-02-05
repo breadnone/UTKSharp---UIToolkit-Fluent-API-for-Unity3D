@@ -181,6 +181,7 @@ namespace UITKsharp
             //Adds Event                ::  UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("KeyPressed!"));
             //Instantiate Box element   ::  UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
             //Gets child                ::  parentVisualElement = UTKSharp.GetChild(parentVisualElement, "childAsName");
+            //Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).SetName("viInstance").Return();
         }
     }
 
@@ -202,7 +203,7 @@ namespace UITKsharp
         public UISharp SetAlignContent(Align alignment = Align.Auto)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.alignContent = alignment;
             return this;
@@ -212,7 +213,7 @@ namespace UITKsharp
         public UISharp SetAlignSelf(Align alignment = Align.Auto)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.alignSelf = alignment;
             return this;
@@ -222,7 +223,7 @@ namespace UITKsharp
         public UISharp SetAlignItems(Align alignment = Align.Auto)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.alignItems = alignment;
             return this;
@@ -233,7 +234,7 @@ namespace UITKsharp
         public UISharp SetBorder(StyleColor color, float width)
         {
             if (visualElement == null || color == null)
-                throw new System.Exception("UISharp : VisualElement and Color can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and Color can't be null!");
 
             visualElement.style.borderLeftColor = color;
             visualElement.style.borderRightColor = color;
@@ -251,7 +252,7 @@ namespace UITKsharp
         public UISharp SetPosition(StyleEnum<Position> value)
         {
             if (visualElement == null || value == null)
-                throw new System.Exception("UISharp : VisualElement and position value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and position value can't be null!");
 
             visualElement.style.position = value;
             return this;
@@ -261,7 +262,7 @@ namespace UITKsharp
         public UISharp SetOpacity(StyleFloat value)
         {
             if (visualElement == null || value == null)
-                throw new System.Exception("UISharp : VisualElement and position value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and position value can't be null!");
 
             visualElement.style.opacity = value;
             return this;
@@ -271,7 +272,7 @@ namespace UITKsharp
         public UISharp SetOverflow(Overflow overflow = Overflow.Visible)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.overflow = overflow;
             return this;
@@ -281,7 +282,7 @@ namespace UITKsharp
         public UISharp SetMaxHeight(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.maxHeight = value;
             return this;
@@ -291,7 +292,7 @@ namespace UITKsharp
         public UISharp SetMinHeight(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.minHeight = value;
             return this;
@@ -301,7 +302,7 @@ namespace UITKsharp
         public UISharp SetMaxWidth(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.maxWidth = value;
             return this;
@@ -311,7 +312,7 @@ namespace UITKsharp
         public UISharp SetMinWidth(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.minWidth = value;
             return this;
@@ -321,7 +322,7 @@ namespace UITKsharp
         public UISharp SetRotation(StyleRotate value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.rotate = value;
             return this;
@@ -331,7 +332,7 @@ namespace UITKsharp
         public UISharp SetJustifyContent(StyleEnum<Justify> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.justifyContent = value;
             return this;
@@ -341,7 +342,7 @@ namespace UITKsharp
         public UISharp SetLeft(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.left = value;
             return this;
@@ -351,7 +352,7 @@ namespace UITKsharp
         public UISharp SetRight(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.right = value;
             return this;
@@ -361,7 +362,7 @@ namespace UITKsharp
         public UISharp SetTop(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.top = value;
             return this;
@@ -371,7 +372,7 @@ namespace UITKsharp
         public UISharp SetBottom(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.bottom = value;
             return this;
@@ -381,7 +382,7 @@ namespace UITKsharp
         public UISharp SetScale(StyleScale value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.scale = value;
             return this;
@@ -391,7 +392,7 @@ namespace UITKsharp
         public UISharp SetCursor(StyleCursor value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.cursor = value;
             return this;
@@ -401,7 +402,7 @@ namespace UITKsharp
         public UISharp SetBcgScaleMode(StyleEnum<ScaleMode> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.unityBackgroundScaleMode = value;
             return this;
@@ -411,7 +412,7 @@ namespace UITKsharp
         public UISharp SetTextShadow(StyleTextShadow value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.textShadow = value;
             return this;
@@ -421,7 +422,7 @@ namespace UITKsharp
         public UISharp SetWordSpacing(StyleLength value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.wordSpacing = value;
             return this;
@@ -432,7 +433,7 @@ namespace UITKsharp
         public UISharp SetText(string value, bool ignoreTypeMismatchError = true)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (visualElement is Label)
                 (visualElement as Label).text = value;
@@ -447,7 +448,7 @@ namespace UITKsharp
             else
             {
                 if (!ignoreTypeMismatchError)
-                    throw new Exception("UISHarp : VisualElement not compatible with text");
+                    throw new Exception("UTKSharp : VisualElement not compatible with text");
             }
             return this;
         }
@@ -456,7 +457,7 @@ namespace UITKsharp
         public UISharp SetTransitionDelay(StyleList<TimeValue> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transitionDelay = value;
             return this;
@@ -466,7 +467,7 @@ namespace UITKsharp
         public UISharp SetTransitionProperty(StyleList<StylePropertyName> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transitionProperty = value;
             return this;
@@ -476,7 +477,7 @@ namespace UITKsharp
         public UISharp SetTransformOrigin(StyleTransformOrigin value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transformOrigin = value;
             return this;
@@ -486,7 +487,7 @@ namespace UITKsharp
         public UISharp SetTransitionTiming(StyleList<EasingFunction> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transitionTimingFunction = value;
             return this;
@@ -496,7 +497,7 @@ namespace UITKsharp
         public UISharp SetTransitionDuration(StyleList<TimeValue> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transitionDuration = value;
             return this;
@@ -506,7 +507,7 @@ namespace UITKsharp
         public UISharp SetTransitionProperty(StyleList<EasingFunction> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.transitionTimingFunction = value;
             return this;
@@ -516,7 +517,7 @@ namespace UITKsharp
         public UISharp SetEnabled(bool value = true)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.SetEnabled(value);
             return this;
@@ -526,7 +527,7 @@ namespace UITKsharp
         public UISharp SetWhiteSpace(StyleEnum<WhiteSpace> value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.whiteSpace = value;
             return this;
@@ -539,7 +540,7 @@ namespace UITKsharp
         public UISharp SetPadding(float? left, float? right, float? top, float? bottom)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (left.HasValue)
                 visualElement.style.paddingLeft = left.Value;
@@ -557,7 +558,7 @@ namespace UITKsharp
         public UISharp SetVisibility(bool enable = true)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (enable)
                 visualElement.style.visibility = Visibility.Visible;
@@ -570,7 +571,7 @@ namespace UITKsharp
         public UISharp SetDisplay(DisplayStyle displayStyle = DisplayStyle.Flex)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.display = displayStyle;
             return this;
@@ -580,7 +581,7 @@ namespace UITKsharp
         public UISharp SetTranslate(StyleTranslate value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.translate = value;
             return this;
@@ -590,7 +591,7 @@ namespace UITKsharp
         public UISharp SetFlexDirection(FlexDirection flexDirection)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             visualElement.style.flexDirection = flexDirection;
             return this;
@@ -600,7 +601,7 @@ namespace UITKsharp
         public UISharp SetFlexGrow(StyleFloat value)
         {
             if (visualElement == null || value == null)
-                throw new System.Exception("UISharp : VisualElement and float value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
             visualElement.style.flexGrow = value;
             return this;
@@ -610,7 +611,7 @@ namespace UITKsharp
         public UISharp SetBcgImageTint(StyleBackground value)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement and float value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
             visualElement.style.backgroundImage = value;
             return this;
@@ -620,7 +621,7 @@ namespace UITKsharp
         public UISharp SetFlexShrink(StyleFloat value)
         {
             if (visualElement == null || value == null)
-                throw new System.Exception("UISharp : VisualElement and float value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
             visualElement.style.flexShrink = value;
             return this;
@@ -630,7 +631,7 @@ namespace UITKsharp
         public UISharp SetFlexWrap(Wrap value = Wrap.NoWrap)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement value can't be null!");
 
             visualElement.style.flexWrap = value;
             return this;
@@ -640,7 +641,7 @@ namespace UITKsharp
         public UISharp SetFontSize(StyleLength value)
         {
             if (visualElement == null || value == null)
-                throw new System.Exception("UISharp : VisualElement and value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and value can't be null!");
 
             visualElement.style.fontSize = value;
             return this;
@@ -650,7 +651,7 @@ namespace UITKsharp
         public UISharp SetBcgColor(StyleColor color)
         {
             if (visualElement == null || color == null)
-                throw new System.Exception("UISharp : VisualElement and Color can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and Color can't be null!");
 
             visualElement.style.backgroundColor = color;
             return this;
@@ -660,7 +661,7 @@ namespace UITKsharp
         public UISharp SetWidth(float? value, bool dynamic = false)
         {
             if (visualElement == null || !value.HasValue)
-                throw new System.Exception("UISharp : VisualElement and value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and value can't be null!");
 
             if (!dynamic)
                 visualElement.style.width = value.Value;
@@ -674,7 +675,7 @@ namespace UITKsharp
         public UISharp SetHeight(float? value, bool dynamic = false)
         {
             if (visualElement == null || !value.HasValue)
-                throw new System.Exception("UISharp : VisualElement and float value can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
             if (!dynamic)
                 visualElement.style.height = value.Value;
@@ -691,7 +692,7 @@ namespace UITKsharp
         public UISharp SetMargin(float? leftValue, float? rightValue, float? topValue, float? bottomValue)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (leftValue.HasValue)
                 visualElement.style.marginLeft = leftValue.Value;
@@ -712,10 +713,10 @@ namespace UITKsharp
         public UISharp SetUserData(System.Object userData)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (userData == null)
-                throw new System.Exception("UISharp : Object as userData can't be null!");
+                throw new System.Exception("UTKSharp : Object as userData can't be null!");
 
             visualElement.userData = userData;
             return this;
@@ -726,7 +727,7 @@ namespace UITKsharp
         public UISharp SetParent(VisualElement parent, bool markDirtyRepaint = false)
         {
             if (visualElement == null || parent == null)
-                throw new System.Exception("UISharp : Child and parent can't be null!");
+                throw new System.Exception("UTKSharp : Child and parent can't be null!");
 
             parent.Add(visualElement);
 
@@ -740,7 +741,7 @@ namespace UITKsharp
         public UISharp SetName(string name)
         {
             if (visualElement == null || String.IsNullOrEmpty(name))
-                throw new System.Exception("UISharp : VisualElement and VisualElement's name can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and VisualElement's name can't be null!");
 
             visualElement.name = name;
             return this;
@@ -760,7 +761,7 @@ namespace UITKsharp
         public static VisualElement GetParent(VisualElement visualElement)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
             
             cachedElement = visualElement;
             return visualElement.parent;
@@ -768,7 +769,7 @@ namespace UITKsharp
         public static VisualElement GetChild(VisualElement visualElement, string childName, string utkId)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (visualElement.childCount == 0)
                 return null;
@@ -792,7 +793,7 @@ namespace UITKsharp
         public static int GetChildCount(VisualElement visualElement)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             cachedElement = visualElement;
             return visualElement.childCount;
@@ -800,10 +801,14 @@ namespace UITKsharp
         public static VisualElement[] GetChildren(VisualElement visualElement)
         {
             if (visualElement == null)
-                throw new System.Exception("UISharp : VisualElement can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             cachedElement = visualElement;
             return visualElement.Children().ToArray();
+        }
+        public static VisualElement.Hierarchy GetHierarchy(VisualElement visualElement)
+        {
+            return visualElement.hierarchy;
         }
     }
     public class UIProperty
@@ -832,7 +837,7 @@ namespace UITKsharp
         public UIEvent SetOnKeyDown(Action<KeyDownEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<KeyDownEvent>(x =>
             {
@@ -843,7 +848,7 @@ namespace UITKsharp
         public UIEvent SetOnMouseDown(Action<MouseDownEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<MouseDownEvent>(x =>
             {
@@ -854,7 +859,7 @@ namespace UITKsharp
         public UIEvent SetOnMouseOver(Action<MouseOverEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<MouseOverEvent>(x =>
             {
@@ -865,7 +870,7 @@ namespace UITKsharp
         public UIEvent SetOnFocusOut(Action<FocusOutEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<FocusOutEvent>(x =>
             {
@@ -876,7 +881,7 @@ namespace UITKsharp
         public UIEvent SetOnMouseEnter(Action<MouseEnterEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<MouseEnterEvent>(x =>
             {
@@ -887,7 +892,7 @@ namespace UITKsharp
         public UIEvent SetOnMouseExit(Action<MouseLeaveEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<MouseLeaveEvent>(x =>
             {
@@ -898,7 +903,7 @@ namespace UITKsharp
         public UIEvent SetOnFocusIn(Action<FocusInEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<FocusInEvent>(x =>
             {
@@ -909,7 +914,7 @@ namespace UITKsharp
         public UIEvent SetOnKeyUp(Action<KeyUpEvent> evt)
         {
             if (cachedVisualElement == null || evt == null)
-                throw new System.Exception("UISharp : VisualElement and callback can't be null!");
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
 
             cachedVisualElement.RegisterCallback<KeyUpEvent>(x =>
             {
@@ -920,13 +925,52 @@ namespace UITKsharp
         public UIEvent ScheduleExecute(VisualElement visualElementToBeWaited,  Action callback, int delay = 0)
         {
             if (cachedVisualElement == null || visualElementToBeWaited == null)
-                throw new System.Exception("UISharp : VisualElements can't be null!");
+                throw new System.Exception("UTKSharp : VisualElements can't be null!");
             
             cachedVisualElement.schedule.Execute(x =>
             {
                 callback.Invoke();
             }).ExecuteLater(delay);
             return this;
+        }
+    }
+    public static class UTKTween
+    {
+        public static void UTKMove(VisualElement visualElement, Vector2 destination, float duration, float delay, EasingMode ease = EasingMode.Linear)
+        {
+            //Create a list that contains the move property, and use it to set transitionProperty.
+            visualElement.style.transitionProperty = new List<StylePropertyName> { "move" };
+            visualElement.style.transitionTimingFunction = new List<EasingFunction> { ease };
+
+            //Duration
+            visualElement.style.transitionDuration = new List<TimeValue> { duration };
+
+            //Delays
+            visualElement.style.transitionDelay = new List<TimeValue> { delay };
+        }
+        public static void UTKRotate(VisualElement visualElement, Vector2 destination, float duration, float delay, EasingMode ease = EasingMode.Linear)
+        {
+            //Create a list that contains the move property, and use it to set transitionProperty.
+            visualElement.style.transitionProperty = new List<StylePropertyName> { "rotate" };
+            visualElement.style.transitionTimingFunction = new List<EasingFunction> { ease };
+
+            //Duration
+            visualElement.style.transitionDuration = new List<TimeValue> { duration };
+
+            //Delays
+            visualElement.style.transitionDelay = new List<TimeValue> { delay };
+        }
+        public static void UTKScale(VisualElement visualElement, Vector2 destination, float duration, float delay, EasingMode ease = EasingMode.Linear)
+        {
+            //Create a list that contains the move property, and use it to set transitionProperty.
+            visualElement.style.transitionProperty = new List<StylePropertyName> { "scale" };
+            visualElement.style.transitionTimingFunction = new List<EasingFunction> { ease };
+
+            //Duration
+            visualElement.style.transitionDuration = new List<TimeValue> { duration };
+
+            //Delays
+            visualElement.style.transitionDelay = new List<TimeValue> { delay };
         }
     }
 }
