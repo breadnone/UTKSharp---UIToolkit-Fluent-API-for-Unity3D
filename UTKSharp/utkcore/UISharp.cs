@@ -229,7 +229,7 @@ namespace UITKsharp
     public class UISharpConstruct
     {
         public string UISharpID {get;set;}
-        public VisualElement root{get;set;}
+        private VisualElement root{get;set;}
         private List<(VisualElement visualElement, string visName, int? id)> elements = new List<(VisualElement visualElement, string visName, int? id)>();
         private bool startIsParent = false;
         private VisualElement currentParent;
@@ -285,7 +285,7 @@ namespace UITKsharp
             return this;
         }
         
-        public UISharpConstruct Child(VisualElement childElement, string childName = "", int? id = null)
+        public UISharpConstruct Child(VisualElement childElement, string childName = "", int? id = null, bool setAsparent = false)
         {
             if(!startIsParent)
                 throw new Exception("UTKsharp : The sequence/chain must be started with Parent method. e.g: Parent(parentVisualElement).Child(childVisualElement)...etc.");
@@ -297,6 +297,17 @@ namespace UITKsharp
             else
             {
                 throw new Exception("UTKSharp : Child already parented to the same parent VisualElement");
+            }
+
+            if(setAsparent)
+                currentParent = childElement;
+
+            if(!elements.Exists(x => x.visualElement == childElement))
+            {
+                if(id.HasValue)
+                    elements.Add((childElement, childName, id.Value));
+                else
+                    elements.Add((childElement, childName, null));
             }
                 
             return this;
