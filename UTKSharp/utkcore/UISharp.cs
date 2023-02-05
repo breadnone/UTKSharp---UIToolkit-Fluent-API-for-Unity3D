@@ -55,11 +55,15 @@ UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetEl
 
 namespace UITKsharp
 {
+    /// <summary>UTKSharp main class.</summary>
     public static class UTKSharp
     {
-        public static UISharpConstruct construct(bool restricTive = false)
+        /// <summary>Constructing layout in a method chain.</summary>
+        /// <param name="customRoot">The parent VisualElement to get the children.</param>
+        /// <param name="restrictive">Supresses warning.</param>
+        public static UISharpConstruct construct(VisualElement customRoot = null, bool restrictive = false)
         {
-            return new UISharpConstruct(restricTive);
+            return new UISharpConstruct(customRoot, restrictive);
         }
 
         /// <summary>Gets children in hierarchy</summary>
@@ -230,9 +234,10 @@ namespace UITKsharp
         private bool startIsParent = false;
         private VisualElement currentParent;
 
-        public UISharpConstruct(bool restrictive = false)
+        public UISharpConstruct(VisualElement customRoot = null, bool restrictive = false)
         {
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+            root = customRoot;
         }
 
         public void Root()
