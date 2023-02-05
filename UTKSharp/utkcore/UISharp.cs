@@ -30,18 +30,25 @@ namespace UITKsharp
 {
     public static class UTKSharp
     {
+        public static UISharpConstruct construct(bool restricTive = false)
+        {
+            return new UISharpConstruct(restricTive);
+        }
+        
         /// <summary>Gets children in hierarchy</summary>
         /// <param name="visualElement">The parent VisualElement to get the children.</param>
         public static VisualElement[] GetChildren(VisualElement visualElement)
         {
             return UTKSharpElement.GetChildren(visualElement);
         }
+
         /// <summary>Gets direct parent in hierarchy</summary>
         /// <param name="visualElement">The child VisualElement to get the parent.</param>
         public static VisualElement GetParent(VisualElement visualElement)
         {
             return UTKSharpElement.GetParent(visualElement);
         }
+
         /// <summary>Gets direct child from a parent VisualElement</summary>
         /// <param name="parent">The parent VisualElement.</param>
         /// <param name="childName">Child name to get from parent VisualElement</param>
@@ -50,12 +57,14 @@ namespace UITKsharp
         {
             return UTKSharpElement.GetChild(parent, childName, utkId);
         }
+
         /// <summary>Sets style to a VisualElement.</summary>
         /// <param name="visualElement">The VisualElement to be styled.</param>
         public static UISharp style(VisualElement visualElement)
         {
             return new UISharp(visualElement);
         }
+
         /// <summary>Adds event to a VisualElement.</summary>
         /// <param name="visualElement">The VisualElement for the event to be added.</param>
         public static UIEvent addEvent(VisualElement visualElement)
@@ -63,6 +72,7 @@ namespace UITKsharp
             var uievent = new UIEvent(visualElement);
             return uievent;
         }
+
         /// <summary>Instantiates DropDownField.</summary>
         /// <param name="dropdownField">Instance of a DropDownField.</param>
         /// <param name="list">Choices to be added to DropDownField.</param>
@@ -71,6 +81,7 @@ namespace UITKsharp
             var uielement = new UISharpDropDownField(dropdownField, list);
             return uielement;
         }
+
         /// <summary>Instantiates TextField.</summary>
         /// <param name="visualElement">Instance of a TextField.</param>
         public static UISharpTextField textFieldElement(TextField textField)
@@ -78,6 +89,7 @@ namespace UITKsharp
             var uielement = new UISharpTextField(textField);
             return uielement;
         }
+
         /// <summary>Instantiates Label UIElement.</summary>
         /// <param name="label">The instance of the Label.</param>
         /// <param name="visualElement">Title for the label</param>
@@ -86,6 +98,7 @@ namespace UITKsharp
             var uielement = new UISharpLabel(label, labelField);
             return uielement;
         }
+
         /// <summary>Instantiates ListView UIElement.</summary>
         /// <param name="listView">The instance of the ListView.</param>
         /// <param name="itemSource">Content as itemSource to be listed in a ListView</param>
@@ -96,6 +109,7 @@ namespace UITKsharp
             var uielement = new UISharpListView(listView, itemSource, makeItem, bindItem, height);
             return uielement;
         }
+        
         /// <summary>Instantiates ScrollView UIElement.</summary>
         /// <param name="listView">The instance of the ScrollView.</param>
         /// <param name="items">Array to be shown in a ScrollView</param>
@@ -104,6 +118,7 @@ namespace UITKsharp
             var uielement = new UISharpScrollView(scrollView, items);
             return uielement;
         }
+
         /// <summary>Instantiates Image UIElement.</summary>
         /// <param name="image">The instance of the Image.</param>
         public static UISharpImage imageElement(Image image)
@@ -111,6 +126,7 @@ namespace UITKsharp
             var uielement = new UISharpImage(image);
             return uielement;
         }
+        
         /// <summary>Instantiates Button UIElement.</summary>
         /// <param name="button">The instance of the Button.</param>
         public static UISharpButton buttonElement(Button button)
@@ -118,6 +134,7 @@ namespace UITKsharp
             var uielement = new UISharpButton(button);
             return uielement;
         }
+
         /// <summary>Instantiates Toggle UIElement.</summary>
         /// <param name="toggle">The instance of the Toggle.</param>
         public static UISharpToggle toggleElement(Toggle toggle)
@@ -125,6 +142,7 @@ namespace UITKsharp
             var uielement = new UISharpToggle(toggle);
             return uielement;
         }
+
         /// <summary>Instantiates Slider UIElement.</summary>
         /// <param name="slider">The instance of the Toggle.</param>
         /// <param name="minValue">Lowest value of a Slider.</param>
@@ -136,6 +154,7 @@ namespace UITKsharp
             var uielement = new UISharpSlider(slider, minValue, maxValue, labelField, sliderDirection);
             return uielement;
         }
+
         /// <summary>Instantiates Slider UIElement.</summary>
         /// <param name="slider">The instance of the Toggle.</param>
         /// <param name="lowLimit">Lowest limit of a Slider.</param>
@@ -149,6 +168,7 @@ namespace UITKsharp
             var uielement = new UISharpMinMaxSlider(slider, minValue, lowLimit, highLimit, maxValue, labelField);
             return uielement;
         }
+
         /// <summary>Instantiates Box UIElement.</summary>
         /// <param name="box">The instance of the Box.</param>
         public static UISharpBox boxElement(Box box)
@@ -156,6 +176,7 @@ namespace UITKsharp
             var uielement = new UISharpBox(box);
             return uielement;
         }
+
         /// <summary>Instantiates PopUpWindow UIElement.</summary>
         /// <param name="popupWindow">The instance of the PopUpWindow.</param>
         public static UISharpPopUpWindow popUpWindowElement(PopupWindow popupWindow)
@@ -163,6 +184,7 @@ namespace UITKsharp
             var uielement = new UISharpPopUpWindow(popupWindow);
             return uielement;
         }
+
         /// <summary>Instantiates RadioButton UIElement.</summary>
         /// <param name="radioButton">The instance of the RadioButton.</param>
         /// <param name="defaultValue">Starting value when first intantiated.</param>
@@ -182,9 +204,126 @@ namespace UITKsharp
             //Instantiate Box element   ::  UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
             //Gets child                ::  parentVisualElement = UTKSharp.GetChild(parentVisualElement, "childAsName");
             //Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).SetName("viInstance").Return();
+
+            /* UTKSharp.construct
+            var parentOne = new VisualElement(); var childOne = new VisualElement();
+            var parentTwo = new VisualElement(); var childTwo = new VisualElement();
+
+            //Constructing layout based on the method chain
+            UTKSharp.construct().Parent(parentOne).Child(childOne).Child(childOne).Parent(parentTwo).Child(childTwo);
+            
+            //Returns root of a hierarchy
+            var getRoot = UTKSharp.construct().Parent(parentOne).Child(childTwo).ReturnRoot();
+
+            //Parent as root, or else the default will be created
+            UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
+
+            //GetElement method to get the reference to visualElement in the current chain
+            var childOne = new VisualElement();
+            var childTwo = new VisualElement();
+            UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
+            *///////////////////
+
         }
     }
+    public class UISharpConstruct
+    {
+        public string UISharpID {get;set;}
+        public VisualElement root{get;set;}
+        private List<(VisualElement visualElement, string visName, int? id)> elements = new List<(VisualElement visualElement, string visName, int? id)>();
+        private bool startIsParent = false;
+        private VisualElement currentParent;
 
+        public UISharpConstruct(bool restrictive = false)
+        {
+            UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+        }
+
+        public void Root()
+        {
+            if(root == null)
+            {
+                root = new VisualElement();
+                root.name = "UTKrootElement";
+            }
+            else
+                throw new Exception("UTKSharp : Root already existed. Only 1 root can be existed in one instance");
+        }
+
+        public UISharpConstruct Parent(VisualElement parentVisualElement, string parentName = "", int? id = null, bool asRoot = false)
+        {
+            if(!startIsParent)
+            {
+                startIsParent = true;
+
+                if(!asRoot)
+                    root.Add(parentVisualElement);
+                else
+                    root = parentVisualElement;
+            }
+                
+            if(String.IsNullOrEmpty(parentName) && !id.HasValue)
+                throw new Exception("UTKSharp : Either parentName or id must be filled!");
+
+            if(parentVisualElement == null)
+                throw new Exception("UTKSharp : Parent VisualElement can't be null");
+
+            if(id.HasValue && !elements.Exists(x => x.id == id.Value))
+            {
+                elements.Add((parentVisualElement, null, id.Value));
+            }
+            else if(!String.IsNullOrEmpty(parentName) && !elements.Exists(x => x.visName == parentName))
+            {
+                elements.Add((parentVisualElement, parentName, null));
+            }
+
+            currentParent = parentVisualElement;
+
+            if(root != parentVisualElement && !root.Contains(parentVisualElement))
+                root.Add(parentVisualElement);
+
+            return this;
+        }
+        
+        public UISharpConstruct Child(VisualElement childElement, string childName = "", int? id = null)
+        {
+            if(!startIsParent)
+                throw new Exception("UTKsharp : The sequence/chain must be started with Parent method. e.g: Parent(parentVisualElement).Child(childVisualElement)...etc.");
+            
+            if(!currentParent.Contains(childElement))
+            {
+                currentParent.Add(childElement);
+            }
+            else
+            {
+                throw new Exception("UTKSharp : Child already parented to the same parent VisualElement");
+            }
+                
+            return this;
+        }
+
+        public UISharpConstruct GetElementAsParent(string name, int? id = null)
+        {
+            if(!String.IsNullOrEmpty(name))
+            {
+                currentParent = elements.Find(x => x.visName == name).visualElement;
+            }
+            else if(id.HasValue)
+            {
+                currentParent = elements.Find(x => x.id == id.Value).visualElement;
+            }
+
+            if(currentParent == null)
+                throw new Exception("UTKSharp : Parent can't be found! Make sure the name/id is correct!");
+
+            return this;
+        }
+
+        public VisualElement ReturnRoot()
+        {
+            return root;
+        }
+    }
     public class UISharp : UIEvent, ISharpStyle, ISharpCommonMethod
     {
         /// <summary>ID for every UTK instances</summary>
@@ -198,6 +337,7 @@ namespace UITKsharp
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             visualElement = visualelement;
         }
+
         /// <summary>Set content alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
         public UISharp SetAlignContent(Align alignment = Align.Auto)
@@ -208,6 +348,7 @@ namespace UITKsharp
             visualElement.style.alignContent = alignment;
             return this;
         }
+
         /// <summary>Sets self alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
         public UISharp SetAlignSelf(Align alignment = Align.Auto)
@@ -218,6 +359,7 @@ namespace UITKsharp
             visualElement.style.alignSelf = alignment;
             return this;
         }
+
         /// <summary>Sets items alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
         public UISharp SetAlignItems(Align alignment = Align.Auto)
@@ -228,6 +370,7 @@ namespace UITKsharp
             visualElement.style.alignItems = alignment;
             return this;
         }
+
         /// <summary>Sets border property of VisualElement.</summary>
         /// <param name="color">Color of the border.</param>
         /// <param name="width">Width of the border.</param>
@@ -247,6 +390,7 @@ namespace UITKsharp
             visualElement.style.borderBottomWidth = width;
             return this;
         }
+
         /// <summary>Sets position of style.position property to VisualElement.</summary>
         /// <param name="value">New position to be assigned.</param>
         public UISharp SetPosition(StyleEnum<Position> value)
@@ -257,6 +401,7 @@ namespace UITKsharp
             visualElement.style.position = value;
             return this;
         }
+
         /// <summary>Sets opacity of style.opacity property to a VisualElement.</summary>
         /// <param name="value">New opacity value (0-1 min/max ratio) to be assigned.</param>
         public UISharp SetOpacity(StyleFloat value)
@@ -267,6 +412,7 @@ namespace UITKsharp
             visualElement.style.opacity = value;
             return this;
         }
+
         /// <summary>Sets overflow of style.overflow property to a VisualElement.</summary>
         /// <param name="overflow">New position to be assigned.</param>
         public UISharp SetOverflow(Overflow overflow = Overflow.Visible)
@@ -277,6 +423,7 @@ namespace UITKsharp
             visualElement.style.overflow = overflow;
             return this;
         }
+
         /// <summary>Sets maximum height of style.maxHeight property to a VisualElement.</summary>
         /// <param name="value">New maxHeight value to be assigned.</param>
         public UISharp SetMaxHeight(StyleLength value)
@@ -287,6 +434,7 @@ namespace UITKsharp
             visualElement.style.maxHeight = value;
             return this;
         }
+
         /// <summary>Sets minimum height of style.maxHeight property to a VisualElement.</summary>
         /// <param name="value">New minHeight value to be assigned.</param>
         public UISharp SetMinHeight(StyleLength value)
@@ -297,6 +445,7 @@ namespace UITKsharp
             visualElement.style.minHeight = value;
             return this;
         }
+
         /// <summary>Sets maximum width of style.maxWidth property to a VisualElement.</summary>
         /// <param name="value">New maxWidth value to be assigned.</param>
         public UISharp SetMaxWidth(StyleLength value)
@@ -317,6 +466,7 @@ namespace UITKsharp
             visualElement.style.minWidth = value;
             return this;
         }
+
         /// <summary>Sets rotation of style.rotate property to a VisualElement.</summary>
         /// <param name="value">Rotation value to be assigned.</param>
         public UISharp SetRotation(StyleRotate value)
@@ -327,6 +477,7 @@ namespace UITKsharp
             visualElement.style.rotate = value;
             return this;
         }
+
         /// <summary>Justifies content of a VisualElement.</summary>
         /// <param name="value">New minWidth value to be assigned.</param>
         public UISharp SetJustifyContent(StyleEnum<Justify> value)
@@ -337,6 +488,7 @@ namespace UITKsharp
             visualElement.style.justifyContent = value;
             return this;
         }
+
         /// <summary>Assign left value of a style.left to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
         public UISharp SetLeft(StyleLength value)
@@ -347,6 +499,7 @@ namespace UITKsharp
             visualElement.style.left = value;
             return this;
         }
+
         /// <summary>Assign right value of a style.right to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
         public UISharp SetRight(StyleLength value)
@@ -357,6 +510,7 @@ namespace UITKsharp
             visualElement.style.right = value;
             return this;
         }
+
         /// <summary>Assign top value of a style.top to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
         public UISharp SetTop(StyleLength value)
@@ -367,6 +521,7 @@ namespace UITKsharp
             visualElement.style.top = value;
             return this;
         }
+
         /// <summary>Assign bottom value of a style.bottom to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
         public UISharp SetBottom(StyleLength value)
@@ -377,6 +532,7 @@ namespace UITKsharp
             visualElement.style.bottom = value;
             return this;
         }
+
         /// <summary>Assign scale value of a style.scale to VisualElement.</summary>
         /// <param name="value">StyleScale value to be assigned.</param>
         public UISharp SetScale(StyleScale value)
@@ -387,6 +543,7 @@ namespace UITKsharp
             visualElement.style.scale = value;
             return this;
         }
+
         /// <summary>Sets cursor when overed on top of VisualElement.</summary>
         /// <param name="value">StyleCursor value to be assigned.</param>
         public UISharp SetCursor(StyleCursor value)
@@ -397,6 +554,7 @@ namespace UITKsharp
             visualElement.style.cursor = value;
             return this;
         }
+
         /// <summary>Sets bacground scale mode of VisualElement.</summary>
         /// <param name="value">StyleCursor value to be assigned.</param>
         public UISharp SetBcgScaleMode(StyleEnum<ScaleMode> value)
@@ -407,6 +565,7 @@ namespace UITKsharp
             visualElement.style.unityBackgroundScaleMode = value;
             return this;
         }
+
         /// <summary>Sets drop shadow of a TextElement.</summary>
         /// <param name="value">StyleTextShadow value to be assigned.</param>
         public UISharp SetTextShadow(StyleTextShadow value)
@@ -417,6 +576,7 @@ namespace UITKsharp
             visualElement.style.textShadow = value;
             return this;
         }
+
         /// <summary>Sets spacing of TextElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
         public UISharp SetWordSpacing(StyleLength value)
@@ -427,6 +587,7 @@ namespace UITKsharp
             visualElement.style.wordSpacing = value;
             return this;
         }
+
         /// <summary>Sets spacing of TextElement.</summary>
         /// <param name="value">String value to be assigned.</param>
         /// <param name="ignoreTypeMismatchError">Ignores type mismatch warnings/throws.</param>
@@ -452,6 +613,7 @@ namespace UITKsharp
             }
             return this;
         }
+
         /// <summary>Sets transition delay of VisualElement.</summary>
         /// <param name="value">StyleList timeValue value to be assigned.</param>
         public UISharp SetTransitionDelay(StyleList<TimeValue> value)
@@ -462,6 +624,7 @@ namespace UITKsharp
             visualElement.style.transitionDelay = value;
             return this;
         }
+
         /// <summary>Sets transition property of VisualElement.</summary>
         /// <param name="value">StyleList propertyName value to be assigned.</param>
         public UISharp SetTransitionProperty(StyleList<StylePropertyName> value)
@@ -472,6 +635,7 @@ namespace UITKsharp
             visualElement.style.transitionProperty = value;
             return this;
         }
+
         /// <summary>Sets transition origin of VisualElement.</summary>
         /// <param name="value">StyleTransformOrigin value to be assigned.</param>
         public UISharp SetTransformOrigin(StyleTransformOrigin value)
@@ -482,6 +646,7 @@ namespace UITKsharp
             visualElement.style.transformOrigin = value;
             return this;
         }
+
         /// <summary>Sets transition easing option of VisualElement.</summary>
         /// <param name="value">Stylelist easingFunction value to be assigned.</param>
         public UISharp SetTransitionTiming(StyleList<EasingFunction> value)
@@ -492,6 +657,7 @@ namespace UITKsharp
             visualElement.style.transitionTimingFunction = value;
             return this;
         }
+
         /// <summary>Sets transition duration of VisualElement.</summary>
         /// <param name="value">StyleList timeValue value to be assigned.</param>
         public UISharp SetTransitionDuration(StyleList<TimeValue> value)
@@ -502,6 +668,7 @@ namespace UITKsharp
             visualElement.style.transitionDuration = value;
             return this;
         }
+
         /// <summary>Sets transition property of VisualElement.</summary>
         /// <param name="value">StyleList easingFunction  value to be assigned.</param>
         public UISharp SetTransitionProperty(StyleList<EasingFunction> value)
@@ -512,6 +679,7 @@ namespace UITKsharp
             visualElement.style.transitionTimingFunction = value;
             return this;
         }
+
         /// <summary>Enable/disable a VisualElement.</summary>
         /// <param name="value">Enable state of a VisualElement.</param>
         public UISharp SetEnabled(bool value = true)
@@ -522,6 +690,7 @@ namespace UITKsharp
             visualElement.SetEnabled(value);
             return this;
         }
+
         /// <summary>Word wrapping over multiple lines if not enough space is available to draw the text of an element.</summary>
         /// <param name="value">Value to be assigned.</param>
         public UISharp SetWhiteSpace(StyleEnum<WhiteSpace> value)
@@ -532,6 +701,7 @@ namespace UITKsharp
             visualElement.style.whiteSpace = value;
             return this;
         }
+
         /// <summary>Sets padding of a VisualElement.</summary>
         /// <param name="left">Left side padding.</param>
         /// <param name="right">Right side padding.</param>
@@ -553,6 +723,7 @@ namespace UITKsharp
 
             return this;
         }
+
         /// <summary>Visibility of a VisualElement.</summary>
         /// <param name="enable">Visibility state of a VisualElement.</param>
         public UISharp SetVisibility(bool enable = true)
@@ -566,6 +737,7 @@ namespace UITKsharp
                 visualElement.style.visibility = Visibility.Hidden;
             return this;
         }
+
         /// <summary>Defines how a VisualElement displayed in a layout.</summary>
         /// <param name="displayStyle">Display style of a VisualElement in a layout.</param>
         public UISharp SetDisplay(DisplayStyle displayStyle = DisplayStyle.Flex)
@@ -576,6 +748,7 @@ namespace UITKsharp
             visualElement.style.display = displayStyle;
             return this;
         }
+
         /// <summary>Translate transformation.</summary>
         /// <param name="value">Translate value.</param>
         public UISharp SetTranslate(StyleTranslate value)
@@ -586,6 +759,7 @@ namespace UITKsharp
             visualElement.style.translate = value;
             return this;
         }
+
         /// <summary>Direction type of an axis.</summary>
         /// <param name="value">Directions type to the axis.</param>
         public UISharp SetFlexDirection(FlexDirection flexDirection)
@@ -596,6 +770,7 @@ namespace UITKsharp
             visualElement.style.flexDirection = flexDirection;
             return this;
         }
+
         /// <summary>Direction type of an axis.</summary>
         /// <param name="value">Shrinks behavior in a container.</param>
         public UISharp SetFlexGrow(StyleFloat value)
@@ -606,6 +781,7 @@ namespace UITKsharp
             visualElement.style.flexGrow = value;
             return this;
         }
+
         /// <summary>Background image of VisualElement.</summary>
         /// <param name="value">Background value</param>
         public UISharp SetBcgImageTint(StyleBackground value)
@@ -616,6 +792,7 @@ namespace UITKsharp
             visualElement.style.backgroundImage = value;
             return this;
         }
+
         /// <summary>Shrink relative to the rest of items in a container.</summary>
         /// <param name="value">Shrinks behavior in a container.</param>
         public UISharp SetFlexShrink(StyleFloat value)
@@ -626,6 +803,7 @@ namespace UITKsharp
             visualElement.style.flexShrink = value;
             return this;
         }
+
         /// <summary>Warps relative to the rest of items in a container.</summary>
         /// <param name="value">Warp mode behavior.</param>
         public UISharp SetFlexWrap(Wrap value = Wrap.NoWrap)
@@ -636,6 +814,7 @@ namespace UITKsharp
             visualElement.style.flexWrap = value;
             return this;
         }
+
         /// <summary>Sets the size of a font.</summary>
         /// <param name="value">Font size value.</param>
         public UISharp SetFontSize(StyleLength value)
@@ -646,6 +825,7 @@ namespace UITKsharp
             visualElement.style.fontSize = value;
             return this;
         }
+
         /// <summary>Determines background color of a VisualElement.</summary>
         /// <param name="value">Color value to assigned for the background.</param>
         public UISharp SetBcgColor(StyleColor color)
@@ -656,6 +836,7 @@ namespace UITKsharp
             visualElement.style.backgroundColor = color;
             return this;
         }
+
         /// <summary>Sets the width size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
         public UISharp SetWidth(float? value, bool dynamic = false)
@@ -670,6 +851,7 @@ namespace UITKsharp
 
             return this;
         }
+
         /// <summary>Sets the height size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
         public UISharp SetHeight(float? value, bool dynamic = false)
@@ -684,6 +866,7 @@ namespace UITKsharp
 
             return this;
         }
+
         /// <summary>Sets margins of a VisualElement.</summary>
         /// <param name="leftValue">Left side margin value.</param>
         /// <param name="rightValue">Right side margin value.</param>
@@ -708,6 +891,7 @@ namespace UITKsharp
 
             return this;
         }
+
         /// <summary>Sets userData as object type.</summary>
         /// <param name="userData">Left side margin value.</param>
         public UISharp SetUserData(System.Object userData)
@@ -721,6 +905,7 @@ namespace UITKsharp
             visualElement.userData = userData;
             return this;
         }
+
         /// <summary>Sets the parent of VisualElement.</summary>
         /// <param name="parent">Parent VisualElement.</param>
         /// <param name="markDirtyRepaint">Dirties the layout to be repainted after reparenting.</param>
@@ -736,6 +921,7 @@ namespace UITKsharp
 
             return this;
         }
+
         /// <summary>Sets name property of a VisualElement.</summary>
         /// <param name="name">Name of the VisualElement to be assigned.</param>
         public UISharp SetName(string name)
@@ -746,6 +932,7 @@ namespace UITKsharp
             visualElement.name = name;
             return this;
         }
+
         /// <summary>Tints image background.</summary>
         /// <param name="styleBackground">StyleColor to be assigned.</param>
         public UISharp SetUBcgImageTint(StyleColor styleBackground)
@@ -756,6 +943,7 @@ namespace UITKsharp
             visualElement.style.unityBackgroundImageTintColor = styleBackground;
             return this;
         }
+
         /// <summary>Background scale mode.</summary>
         /// <param name="scaleMode">ScaleMode value to be assigned.</param>
         public UISharp SetUBcgScaleMode(StyleEnum<ScaleMode> scaleMode)
@@ -766,6 +954,7 @@ namespace UITKsharp
             visualElement.style.unityBackgroundScaleMode= scaleMode;
             return this;
         }
+
         /// <summary>Sets custom font.</summary>
         /// <param name="styleFont">Font type to be assigned.</param>
         public UISharp SetUFont(StyleFont styleFont)
@@ -776,6 +965,7 @@ namespace UITKsharp
             visualElement.style.unityFont= styleFont;
             return this;
         }
+
         /// <summary>Sets custom font.</summary>
         /// <param name="fontDefinition">Font type to be assigned.</param>
         public UISharp SetUFontDefinition(StyleFontDefinition fontDefinition)
@@ -786,6 +976,7 @@ namespace UITKsharp
             visualElement.style.unityFontDefinition = fontDefinition;
             return this;
         }
+
         /// <summary>Sets font's style and weight.</summary>
         /// <param name="fontStyle">FontStyle type to be assigned.</param>
         public UISharp SetUFontStyleAndWeight(StyleEnum<FontStyle> fontStyle)
@@ -796,6 +987,7 @@ namespace UITKsharp
             visualElement.style.unityFontStyleAndWeight = fontStyle;
             return this;
         }
+
         /// <summary>Sets clipbox overflow mode.</summary>
         /// <param name="overflowClipbox">OverflowClipbox styleEnum to be assigned.</param>
         public UISharp SetUOverflowClipbox(StyleEnum<OverflowClipBox> overflowClipbox)
@@ -806,6 +998,7 @@ namespace UITKsharp
             visualElement.style.unityOverflowClipBox = overflowClipbox;
             return this;
         }
+
         /// <summary>Sets paragraph spacing.</summary>
         /// <param name="styleLength">Paragraph spacing value to be assigned.</param>
         public UISharp SetUParagraphSpacing(StyleLength styleLength)
@@ -816,6 +1009,7 @@ namespace UITKsharp
             visualElement.style.unityParagraphSpacing = styleLength;
             return this;
         }
+
         /// <summary>Sets left slice.</summary>
         /// <param name="value">Left slice value assigned.</param>
         public UISharp SetUSliceLeft(StyleInt value)
@@ -826,6 +1020,7 @@ namespace UITKsharp
             visualElement.style.unitySliceLeft = value;
             return this;
         }
+
         /// <summary>Sets right slice.</summary>
         /// <param name="value">Right slice value to be assigned.</param>
         public UISharp SetUSliceRight(StyleInt value)
@@ -836,6 +1031,7 @@ namespace UITKsharp
             visualElement.style.unitySliceRight = value;
             return this;
         }
+
         /// <summary>Sets top slice.</summary>
         /// <param name="overflowClipbox">Top slice value to be assigned.</param>
         public UISharp SetUSliceTop(StyleInt value)
@@ -846,6 +1042,7 @@ namespace UITKsharp
             visualElement.style.unitySliceLeft = value;
             return this;
         }
+
         /// <summary>Sets bottom slice.</summary>
         /// <param name="overflowClipbox">Bottom slice value to be assigned.</param>
         public UISharp SetUSliceBottom(StyleInt value)
@@ -856,6 +1053,7 @@ namespace UITKsharp
             visualElement.style.unitySliceBottom = value;
             return this;
         }
+
         /// <summary>Sets text alignment.</summary>
         /// <param name="alignment">Text alignment mode.</param>
         public UISharp SetUTextAlign(StyleEnum<TextAnchor> alignment)
@@ -876,6 +1074,7 @@ namespace UITKsharp
             visualElement.style.unityTextOutlineColor = color;
             return this;
         }
+
         /// <summary>Sets text outline color.</summary>
         /// <param name="alignment">Bottom slice value to be assigned.</param>
         public UISharp SetUTextOutlineWidth(StyleFloat widthSize)
@@ -886,6 +1085,7 @@ namespace UITKsharp
             visualElement.style.unityTextOutlineWidth = widthSize;
             return this;
         }
+
         /// <summary>Sets bottom slice.</summary>
         /// <param name="alignment">Bottom slice value to be assigned.</param>
         public UISharp SetUTextOverflowPosition(StyleEnum<TextOverflowPosition> overflowPosition)
@@ -896,6 +1096,7 @@ namespace UITKsharp
             visualElement.style.unityTextOverflowPosition = overflowPosition;
             return this;
         }
+
         /// <summary>Return the VisualElement that's being instantiated. Must be used at the very end of the method chain.</summary>
         /// <param name="name">Name of the VisualElement to be assigned.</param>
         public VisualElement Return()
@@ -960,10 +1161,6 @@ namespace UITKsharp
         {
             return visualElement.hierarchy;
         }
-    }
-    public class UIProperty
-    {
-
     }
     public class UISharpCommonMethod : ISharpCommonMethod 
     { 

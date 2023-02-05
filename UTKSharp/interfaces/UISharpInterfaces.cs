@@ -1,4 +1,4 @@
-/*
+/*MIT
 Copyright (c) 2023 UTKSharp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,6 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace UITKsharp
 {
@@ -55,13 +56,20 @@ namespace UITKsharp
 
     }
 
-    public interface IUnityCommonProp
-    {
-        public UISharp SetUnityFont(Font font);
-    }
-
     public class UISharpValType<T> where T : struct
     {
         public T Value { get; set; }
+    }
+    public interface ISharpBulkCreate
+    {
+        public UISharpType UTKType();
+        public void CreateArrayElement();
+    }
+    public class ConstructType
+    {
+        public VisualElement visualElement;
+        public string id;
+        public int index;
+        public bool isParent = false;
     }
 }

@@ -78,6 +78,35 @@ namespace UITKsharp
             return this;
         }
     }
+    public class UISharpRadioGroup : UISharp
+    {
+        public RadioButtonGroup radioButtonGroup { get; set; }
+
+        public UISharpRadioGroup(RadioButtonGroup radioGroupElement, List<string> choices, int defaultSelected = 0, string labelText = "") : base(radioGroupElement)
+        {
+            if (radioGroupElement == null || choices == null || choices.Count == 0)
+                throw new Exception("UISharp : RadioButtonGroup element and choices can't be null or empty");
+
+            radioButtonGroup = radioGroupElement;
+            radioButtonGroup.labelElement.text = labelText;
+            radioButtonGroup.choices = choices;
+            radioButtonGroup.value = defaultSelected;
+        }
+
+        public UISharpRadioGroup MarkDirtyRepaint()
+        {
+            radioButtonGroup.MarkDirtyRepaint();
+            return this;
+        }
+        public UISharpRadioGroup SetValueChangedEvent(Action<int> callback)
+        {
+            radioButtonGroup.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+    }
     public class UISharpRadioButton : UISharp
     {
         public RadioButton radioButton { get; set; }
