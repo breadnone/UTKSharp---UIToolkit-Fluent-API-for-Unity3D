@@ -11,6 +11,23 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
 **UIElement**<br>`UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, true).SetWidth(100, true);`<br/>  
 
+**Constructing layout**
+```
+            //Constructing layout based on the method chain
+            UTKSharp.construct().Parent(parentOne).Child(childOne).Child(childOne).Parent(parentTwo).Child(childTwo);
+            
+            //Returns root of a hierarchy
+            var getRoot = UTKSharp.construct().Parent(parentOne).Child(childTwo).ReturnRoot();
+
+            //Parent as root, or else the default will be created
+            UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
+            
+            //GetElement method to retrieve VisualElement tagged by id/name in the current chain
+            var childOne = new VisualElement();
+            var childTwo = new VisualElement();
+            UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
+```
+
 # Supported UIElements
 VisualElement  
 DropDownField  
