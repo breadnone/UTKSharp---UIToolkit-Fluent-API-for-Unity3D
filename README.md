@@ -28,6 +28,12 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
             var childTwo = new VisualElement();
             
             UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
+            
+            //Generate custom splitView in single line.
+            var custom = UTKSharp.customSplitView(50, 50, 5, true).AddPanel(100, 100, id:1).SplitPanel(3, "custom-no", true);
+
+            //Returns sub-panels from custom splitView
+            VisualElement[] customSView = custom.ReturnSubContainers();
 ```
 
 # Supported UIElements
