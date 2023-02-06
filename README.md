@@ -32,8 +32,9 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
             //Generate custom splitView in single line.
             var custom = UTKSharp.customSplitView(50, 50, 5, true).AddPanel(100, 100, id:1).SplitPanel(3, "custom-no", true);
 
-            //Returns sub-panels from custom splitView
-            VisualElement[] customSView = custom.ReturnSubContainers();
+            //Returns panels/sub-panels from custom splitView
+            VisualElement[] subPanels = custom.ReturnSubPanels();
+            VisualElement[] panels = custom.ReturnSubPanels();
 ```
 
 # Supported UIElements
