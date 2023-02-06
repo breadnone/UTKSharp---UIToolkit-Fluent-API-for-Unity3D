@@ -11,7 +11,7 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
 **UIElement**<br>`UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, true).SetWidth(100, true);`<br/>  
 
-**Constructing layout**
+**Constructing layout with `UTKSharp.construct() & UTKSharp.customSplitView()` methods**
 ```
             //Constructing layout based on the method chain
             UTKSharp.construct().Parent(parentOne).Child(childOne).Child(childOne).Parent(parentTwo).Child(childTwo);
