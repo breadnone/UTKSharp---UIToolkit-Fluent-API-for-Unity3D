@@ -1,4 +1,4 @@
-/*
+/*MIT License
 Copyright (c) 2023 UTKSharp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,6 +28,7 @@ namespace UITKsharp
     {
         //public UISharp GetSourceVisualElement(T visualElement, float value, bool dynamic = false);
         public UISharp SetWidth(float? value, bool dynamic = false);
+        public UISharp SetColor(StyleColor color);
         public UISharp SetHeight(float? value, bool dynamic = false);
         public UISharp SetMargin(float? leftValue, float? rightValue, float? topValue, float? bottomValue);
         public UISharp SetPadding(float? left, float? right, float? top, float? bottom);
