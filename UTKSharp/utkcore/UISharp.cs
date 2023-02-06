@@ -1,22 +1,15 @@
 /* MIT License
 Copyright (c) 2023 UTKSharp
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 using UnityEngine;
@@ -51,6 +44,12 @@ UTKSharp.construct().Parent(parentOne, asRoot: true).Child(childTwo);
 var childOne = new VisualElement();
 var childTwo = new VisualElement();
 UTKSharp.construct().Parent(new VisualElement(), "parent").Child(childOne).GetElementAsParent("parent").Child(childTwo);
+
+//Constructing custom splitView in single line.
+var custom = UTKSharp.customSplitView(50, 50, 5, true).AddPanel(100, 100, id:1).SplitPanel(3, "custom-no", true);
+
+//Returns sub-panels
+VisualElement[] customSView = custom.ReturnSubPanels();
 *///////////////////
 
 namespace UITKsharp
@@ -58,6 +57,16 @@ namespace UITKsharp
     /// <summary>UTKSharp main class.</summary>
     public static class UTKSharp
     {
+        /// <summary>Generates custom splitView.</summary>
+        /// <param name="width">The width of the VisualElement.</param>
+        /// <param name="height">The height of the VisualElement.</param>
+        /// <param name="margin">The top, left, right, bottom margin in single value.</param>
+        /// <param name="dynamic">Dynamic layout. Default is true.</param>
+        public static UTKMakeSplit customSplitView(float width, float height, float margin, bool dynamic = true)
+        {
+            return new UTKMakeSplit(null, width, height, margin, dynamic);
+        }
+
         /// <summary>Constructing layout in a method chain.</summary>
         /// <param name="customRoot">The parent VisualElement to get the children.</param>
         /// <param name="restrictive">Supresses warning.</param>
@@ -1293,6 +1302,149 @@ namespace UITKsharp
             });
             return this;
         }
+        public UIEvent SetOnMouseMove(Action<MouseMoveEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<MouseMoveEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnMouseLeaveWindow(Action<MouseLeaveWindowEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<MouseLeaveWindowEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnMouseLeave(Action<MouseLeaveEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<MouseLeaveEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnFocus(Action<FocusEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<FocusEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnBlur(Action<BlurEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<BlurEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnLeftClick(Action<ClickEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<ClickEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnRightClick(Action<ContextClickEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<ContextClickEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnMouseWheel(Action<WheelEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<WheelEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnDragEnter(Action<DragEnterEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<DragEnterEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnDragLeave(Action<DragLeaveEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<DragLeaveEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnPointerOut(Action<PointerOutEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<PointerOutEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnPointerEnter(Action<PointerEnterEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<PointerEnterEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
+        public UIEvent SetOnPointerLeave(Action<PointerLeaveEvent> evt)
+        {
+            if (cachedVisualElement == null || evt == null)
+                throw new System.Exception("UTKSharp : VisualElement and callback can't be null!");
+
+            cachedVisualElement.RegisterCallback<PointerLeaveEvent>(x =>
+            {
+                evt.Invoke(x);
+            });
+            return this;
+        }
         public UIEvent ScheduleExecute(VisualElement visualElementToBeWaited, Action callback, int delay = 0)
         {
             if (cachedVisualElement == null || visualElementToBeWaited == null)
@@ -1342,6 +1494,115 @@ namespace UITKsharp
 
             //Delays
             visualElement.style.transitionDelay = new List<TimeValue> { delay };
+        }
+    }
+    //TODO Inline layout construction with fluent api. Still testing what's the best way to do thius 
+    public class UTKMakeSplit
+    {
+        private bool uDatNotAvailable;
+        private VisualElement root;
+        public UTKMakeSplit(VisualElement customRoot = null, float width = 100, float height = 100, float margin = 5, bool dynamicSize = false)
+        {
+            root = customRoot;
+
+            if(customRoot == null)
+            {
+                root = new VisualElement();
+            }
+
+            root.name = "root";
+            UTKSharp.style(root).SetWidth(width, true).SetHeight(height, true).SetAlignItems(Align.Center).SetMargin(margin, margin, margin, margin);
+            root.userData = (new List<VisualElement>(), new List<VisualElement>());
+        }
+        private List<VisualElement> GetUData(bool getMainContainer)
+        {
+            if(!uDatNotAvailable)
+            {
+                if(getMainContainer)
+                {
+                    var tmp = ((List<VisualElement>, List<VisualElement>))root.userData;
+                    
+                    if(tmp.Item1 != null && tmp.Item2 != null)
+                    {
+                        return tmp.Item1;
+                    }
+                    else
+                    {
+                        return tmp.Item2;
+                    }
+                }
+            }
+            else
+            {
+                if(getMainContainer)
+                {
+                    var getMainCon = GetUData(true);
+
+                    if(getMainCon != null)
+                        return getMainCon;
+                }
+                else
+                {
+                    var getMainCon = GetUData(false);
+                    if(getMainCon != null)
+                        return getMainCon;
+                }
+            }
+            return null;
+        }
+        public UTKMakeSplit AddPanel(float width, float height, int? id = null)
+        {
+            VisualElement vis = new VisualElement();
+
+            if(id.HasValue)
+                vis.name = id.Value.ToString();
+
+            UTKSharp.style(vis).SetWidth(width, true).SetHeight(height, true);
+            GetUData(true).Add(vis);
+            return this;
+        }
+        public UTKMakeSplit SplitPanel(int pieces, string prefix, bool horizontal = true)
+        {
+            var udat = GetUData(true);
+            var con = GetUData(false);
+
+            if(udat != null && udat.Count > 0)
+            {
+                float total = 100 / pieces;
+
+                for(int i = 0; i < udat.Count; i++)
+                {
+                    if(udat[i] == null)
+                        continue;
+
+                    if(horizontal)
+                    {
+                        UTKSharp.style(udat[i]).SetFlexDirection(FlexDirection.Row);
+                    }
+
+                    for(int j = 0; j < pieces; j++)
+                    {
+                        var viscon = new VisualElement();
+                        viscon.style.width = new StyleLength(new Length(total, LengthUnit.Percent));
+                        viscon.name = prefix + j;
+                        udat[i].Add(viscon);
+                        con.Add(viscon);
+                    }
+                }
+            }
+            return this;
+        }
+        public VisualElement ReturnRoot()
+        {
+            return root;
+        }
+        public VisualElement[] ReturnPanels()
+        {
+            return GetUData(true).ToArray();
+        }
+        public VisualElement[] ReturnSubPanels()
+        {
+            return GetUData(false).ToArray();
         }
     }
 }
