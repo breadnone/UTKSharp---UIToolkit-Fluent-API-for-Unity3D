@@ -370,7 +370,16 @@ namespace UITKsharp
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             visualElement = visualelement;
         }
+        /// <summary>Color of VisualElement.</summary>
+        /// <param name="color">Type of alignment.</param>
+        public UISharp SetColor(StyleColor color)
+        {
+            if (visualElement == null)
+                throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
+            visualElement.style.color = color;
+            return this;
+        }
         /// <summary>Set content alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
         public UISharp SetAlignContent(Align alignment = Align.Auto)
