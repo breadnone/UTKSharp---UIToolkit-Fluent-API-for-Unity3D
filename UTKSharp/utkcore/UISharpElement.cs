@@ -1,22 +1,15 @@
 /* MIT License
 Copyright (c) 2023 UTKSharp
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 using System.Collections;
@@ -24,6 +17,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
+
+#if UNITY_EDITOR
+using UnityEditor.UIElements;
+#endif
 
 namespace UITKsharp
 {
@@ -757,5 +754,490 @@ namespace UITKsharp
             return visualElement as ListView;
         }
     }
-
 }
+
+
+#if UNITY_EDITOR
+namespace UITKsharp.Editor
+{    
+    public class UISharpIntField : UISharp
+    {
+        private IntegerField intField;
+
+        public UISharpIntField (IntegerField integerField): base(integerField)
+        {
+            intField = integerField;
+        }
+        public UISharpIntField SetValueChangedEvent(Action<int> callback)
+        {
+            intField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public UISharpIntField SetTrippleClickSelect(bool state)
+        {
+            intField.tripleClickSelectsLine = state;
+            return this;
+        }
+        public UISharpIntField SetDoubleClickSelect(bool state)
+        {
+            intField.doubleClickSelectsWord = state;
+            return this;
+        }
+        public UISharpIntField SetMaxLength(int maxlength)
+        {
+            intField.maxLength = maxlength;
+            return this;
+        }
+        public UISharpIntField SetMaskChar(char maskChar)
+        {
+            intField.maskChar = maskChar;
+            return this;
+        }
+        public IntegerField ReturnAsType()
+        {
+            return intField;
+        }
+    }
+    public class UISharpVector2Field : UISharp
+    {
+        private Vector2Field vec2Field;
+
+        public UISharpVector2Field (Vector2Field vector2Field): base(vector2Field)
+        {
+            vec2Field = vector2Field;
+        }
+        public UISharpVector2Field SetValueChangedEvent(Action<Vector2> callback)
+        {
+            vec2Field.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public Vector2Field ReturnAsType()
+        {
+            return vec2Field;
+        }
+    }
+    public class UISharpVector3Field : UISharp
+    {
+        private Vector3Field vec3Field;
+
+        public UISharpVector3Field (Vector3Field vector3Field): base(vector3Field)
+        {
+            vec3Field = vector3Field;
+        }
+        public UISharpVector3Field SetValueChangedEvent(Action<Vector3> callback)
+        {
+            vec3Field.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public Vector3Field ReturnAsType()
+        {
+            return vec3Field;
+        }
+    }
+    public class UISharpVector4Field : UISharp
+    {
+        private Vector4Field vec4Field;
+
+        public UISharpVector4Field (Vector4Field vector4Field): base(vector4Field)
+        {
+            vec4Field = vector4Field;
+        }
+        public UISharpVector4Field SetValueChangedEvent(Action<Vector4> callback)
+        {
+            vec4Field.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public Vector4Field ReturnAsType()
+        {
+            return vec4Field;
+        }
+    }
+    public class UISharpDoubleField : UISharp
+    {
+        private DoubleField doubleField;
+
+        public UISharpDoubleField (DoubleField doublefield): base(doublefield)
+        {
+            doubleField = doublefield;
+        }
+        public UISharpDoubleField SetValueChangedEvent(Action<double> callback)
+        {
+            doubleField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public DoubleField ReturnAsType()
+        {
+            return doubleField;
+        }
+    }
+    public class UISharpFloatField : UISharp
+    {
+        private FloatField floatField;
+
+        public UISharpFloatField (FloatField floatfield): base(floatfield)
+        {
+            floatField = floatfield;
+        }
+        public UISharpFloatField SetValueChangedEvent(Action<double> callback)
+        {
+            floatField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public FloatField ReturnAsType()
+        {
+            return floatField;
+        }
+        public UISharpFloatField SetBinding(IBinding bindingObject)
+        {
+            floatField.binding = bindingObject;
+            return this;
+        }
+        public UISharpFloatField SetBindingPath(string bindingpath)
+        {
+            floatField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpColorField : UISharp
+    {
+        private ColorField colorField;
+
+        public UISharpColorField (ColorField colorfield): base(colorfield)
+        {
+            colorField = colorfield;
+        }
+        public UISharpColorField SetHDR(bool state)
+        {
+            colorField.hdr = state;
+            return this;
+        }
+        public UISharpColorField SetShowAlpha(bool state)
+        {
+            colorField.showAlpha = state;
+            return this;
+        }
+        public UISharpColorField SetShowEyeDropper(bool state)
+        {
+            colorField.showEyeDropper = state;
+            return this;
+        }
+        public UISharpColorField SetValueChangedEvent(Action<Color> callback)
+        {
+            colorField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public ColorField ReturnAsType()
+        {
+            return colorField;
+        }
+        public UISharpColorField SetBinding(IBinding bindingObject)
+        {
+            colorField.binding = bindingObject;
+            return this;
+        }
+        public UISharpColorField SetBindingPath(string bindingpath)
+        {
+            colorField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpCurveField : UISharp
+    {
+        private CurveField curveField;
+
+        public UISharpCurveField (CurveField curvefield): base(curvefield)
+        {
+            curveField = curvefield;
+        }
+        public UISharpCurveField SetValueChangedEvent(Action<AnimationCurve> callback)
+        {
+            curveField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public UISharpCurveField SetRange(Rect rect)
+        {
+            curveField.ranges = rect;
+            return this;
+        }
+        public UISharpCurveField SetRenderMode(CurveField.RenderMode renderMode)
+        {
+            curveField.renderMode = renderMode;
+            return this;
+        }
+        public CurveField ReturnAsType()
+        {
+            return curveField;
+        }
+        public UISharpCurveField SetBinding(IBinding bindingObject)
+        {
+            curveField.binding = bindingObject;
+            return this;
+        }
+        public UISharpCurveField SetBindingPath(string bindingpath)
+        {
+            curveField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpEnumField : UISharp
+    {
+        private EnumField enumField;
+
+        public UISharpEnumField (EnumField enumfield): base(enumfield)
+        {
+            enumField = enumfield;
+        }
+        public UISharpEnumField SetValueChangedEvent(Action<Enum> callback)
+        {
+            enumField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public EnumField ReturnAsType()
+        {
+            return enumField;
+        }
+        public UISharpEnumField SetBinding(IBinding bindingObject)
+        {
+            enumField.binding = bindingObject;
+            return this;
+        }
+        public UISharpEnumField SetBindingPath(string bindingpath)
+        {
+            enumField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpEnumFlagsField : UISharp
+    {
+        private EnumFlagsField enumFlagsField;
+
+        public UISharpEnumFlagsField(EnumFlagsField enumflagsfield, List<string> choice): base(enumflagsfield)
+        {
+            enumFlagsField = enumflagsfield;
+            enumFlagsField.choices = choice;
+        }
+        public UISharpEnumFlagsField SetValueChangedEvent(Action<Enum> callback)
+        {
+            enumFlagsField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public EnumFlagsField ReturnAsType()
+        {
+            return enumFlagsField;
+        }
+        public UISharpEnumFlagsField SetBinding(IBinding bindingObject)
+        {
+            enumFlagsField.binding = bindingObject;
+            return this;
+        }
+        public UISharpEnumFlagsField SetBindingPath(string bindingpath)
+        {
+            enumFlagsField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpGradientField : UISharp
+    {
+        private GradientField gradientField;
+        public UISharpGradientField(GradientField gradientfield): base(gradientfield)
+        {
+            gradientField = gradientfield;
+        }
+        public UISharpGradientField SetColorSpace(ColorSpace colorSpace)
+        {
+            gradientField.colorSpace = colorSpace;
+            return this;
+        }
+        public UISharpGradientField SetValueChangedEvent(Action<Gradient> callback)
+        {
+            gradientField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public GradientField ReturnAsType()
+        {
+            return gradientField;
+        }
+        public UISharpGradientField SetBinding(IBinding bindingObject)
+        {
+            gradientField.binding = bindingObject;
+            return this;
+        }
+        public UISharpGradientField SetBindingPath(string bindingpath)
+        {
+            gradientField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpHash128Field : UISharp
+    {
+        private Hash128Field hashField;
+        public UISharpHash128Field(Hash128Field hashfield): base(hashfield)
+        {
+            hashField = hashfield;
+        }
+        public Hash128Field ReturnAsType()
+        {
+            return hashField;
+        }
+
+        public UISharpHash128Field SetValueChangedEvent(Action<Hash128> callback)
+        {
+            hashField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+
+            return this;
+        }
+        public UISharpHash128Field SetBinding(IBinding bindingObject)
+        {
+            hashField.binding = bindingObject;
+            return this;
+        }
+        public UISharpHash128Field SetBindingPath(string bindingpath)
+        {
+            hashField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpObjectField : UISharp
+    {
+        private ObjectField objectField;
+        public UISharpObjectField(ObjectField objectfield, Type type = null): base(objectfield)
+        {
+            objectField = objectfield;
+            
+            if(type != null)
+                objectField.objectType = type;
+        }
+        public ObjectField ReturnAsType()
+        {
+            return objectField;
+        }
+        public UISharpObjectField SetObjectType(Type type)
+        {
+            objectField.objectType = type;
+            return this;
+        }
+        public UISharpObjectField SetAllowSceneObject(bool state)
+        {
+            objectField.allowSceneObjects = state;
+            return this;
+        }
+        public UISharpObjectField SetValueChangedEvent(Action<UnityEngine.Object> callback)
+        {
+            objectField.RegisterValueChangedCallback(x =>
+            {
+                callback.Invoke(x.newValue);
+            });
+
+            return this;
+        }
+        public UISharpObjectField SetBinding(IBinding bindingObject)
+        {
+            objectField.binding = bindingObject;
+            return this;
+        }
+        public UISharpObjectField SetBindingPath(string bindingpath)
+        {
+            objectField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpPropertyField : UISharp
+    {
+        private PropertyField propertyField;
+        public UISharpPropertyField(PropertyField propertyfield): base(propertyfield)
+        {
+            propertyField = propertyfield;
+        }
+        public UISharpPropertyField SetBinding(IBinding bindingObject)
+        {
+            propertyField.binding = bindingObject;
+            return this;
+        }
+        public UISharpPropertyField SetBindingPath(string bindingpath)
+        {
+            propertyField.bindingPath = bindingpath;
+            return this;
+        }
+        public PropertyField ReturnAsType()
+        {
+            return propertyField;
+        }
+    }
+    public class UISharpRectField : UISharp
+    {
+        private RectField propertyField;
+        public UISharpRectField(RectField rectfield): base(rectfield)
+        {
+            propertyField = rectfield;
+        }
+        public UISharpRectField SetBinding(IBinding bindingObject)
+        {
+            propertyField.binding = bindingObject;
+            return this;
+        }
+        public UISharpRectField SetBindingPath(string bindingpath)
+        {
+            propertyField.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpRectIntField : UISharp
+    {
+        private RectIntField rectIntField;
+        public UISharpRectIntField(RectIntField rectintfield): base(rectintfield)
+        {
+            rectIntField = rectintfield;
+        }
+        public UISharpRectIntField SetBinding(IBinding bindingObject)
+        {
+            rectIntField.binding = bindingObject;
+            return this;
+        }
+        public UISharpRectIntField SetBindingPath(string bindingpath)
+        {
+            rectIntField.bindingPath = bindingpath;
+            return this;
+        }
+        public RectIntField ReturnAsType()
+        {
+            return rectIntField;
+        }
+    }
+}
+#endif
