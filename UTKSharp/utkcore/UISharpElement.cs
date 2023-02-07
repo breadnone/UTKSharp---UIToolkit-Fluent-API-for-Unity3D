@@ -27,7 +27,6 @@ using System;
 
 namespace UITKsharp
 {
-
     public class UISharpDropDownField : UISharp
     {
         public DropdownField dropDownField { get; set; }
@@ -149,6 +148,10 @@ namespace UITKsharp
             });
             return this;
         }
+        public RadioButton ReturnAsType()
+        {
+            return visualElement as RadioButton;
+        }
     }
     public class UISharpPopUpWindow : UISharp
     {
@@ -177,6 +180,10 @@ namespace UITKsharp
         {
             popupWindow.bindingPath = bindingpath;
             return this;
+        }
+        public PopupWindow ReturnAsType()
+        {
+            return visualElement as PopupWindow;
         }
     }
     public class UISharpTextField : UISharp
@@ -259,6 +266,10 @@ namespace UITKsharp
             textField.bindingPath = bindingpath;
             return this;
         }
+        public TextField ReturnAsType()
+        {
+            return visualElement as TextField;
+        }
     }
     public class UISharpBox : UISharp
     {
@@ -276,6 +287,10 @@ namespace UITKsharp
         {
             box.MarkDirtyRepaint();
             return this;
+        }
+        public Box ReturnAsType()
+        {
+            return visualElement as Box;
         }
     }
     public class UISharpMinMaxSlider : UISharp
@@ -328,6 +343,10 @@ namespace UITKsharp
         {
             minMaxSlider.bindingPath = bindingpath;
             return this;
+        }
+        public MinMaxSlider ReturnAsType()
+        {
+            return visualElement as MinMaxSlider;
         }
     }
     public class UISharpSlider : UISharp
@@ -393,6 +412,10 @@ namespace UITKsharp
             });
             return this;
         }
+        public Slider ReturnAsType()
+        {
+            return visualElement as Slider;
+        }
     }
     public class UISharpToggle : UISharp
     {
@@ -431,6 +454,10 @@ namespace UITKsharp
             toggle.bindingPath = bindingpath;
             return this;
         }
+        public Toggle ReturnAsType()
+        {
+            return visualElement as Toggle;
+        }
     }
     public class UISharpButton : UISharp
     {
@@ -457,6 +484,10 @@ namespace UITKsharp
                 callback.Invoke();
             };
             return this;
+        }
+        public Button ReturnAsType()
+        {
+            return visualElement as Button;
         }
     }
     public class UISharpImage : UISharp
@@ -510,6 +541,10 @@ namespace UITKsharp
         {
             image.scaleMode = scaleMode;
             return this;
+        }
+        public Image ReturnAsType()
+        {
+            return visualElement as Image;
         }
     }
     public class UISharpScrollView : UISharp
@@ -589,6 +624,10 @@ namespace UITKsharp
         {
             scrollView.verticalScrollerVisibility = state;
             return this;
+        }
+        public ScrollView ReturnAsType()
+        {
+            return visualElement as ScrollView;
         }
     }
     public class UISharpListView : UISharp
@@ -712,6 +751,10 @@ namespace UITKsharp
         {
             listView.ScrollToItem(index);
             return this;
+        }
+        public ListView ReturnAsType()
+        {
+            return visualElement as ListView;
         }
     }
 
