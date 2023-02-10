@@ -26,6 +26,7 @@ namespace UITKsharp
 {
     public enum UISharpType
     {
+        isVisualElement,
         isLabel,
         isDropDownField,
         isListview,

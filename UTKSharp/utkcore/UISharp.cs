@@ -372,7 +372,7 @@ namespace UITKsharp
         }
         /// <summary>Color of VisualElement.</summary>
         /// <param name="color">Type of alignment.</param>
-        public UISharp SetColor(StyleColor color)
+        public UISharp Color(StyleColor color)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -382,7 +382,7 @@ namespace UITKsharp
         }
         /// <summary>Set content alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
-        public UISharp SetAlignContent(Align alignment = Align.Auto)
+        public UISharp AlignContent(Align alignment = Align.Auto)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -393,7 +393,7 @@ namespace UITKsharp
 
         /// <summary>Sets self alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
-        public UISharp SetAlignSelf(Align alignment = Align.Auto)
+        public UISharp AlignSelf(Align alignment = Align.Auto)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -404,7 +404,7 @@ namespace UITKsharp
 
         /// <summary>Sets items alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
-        public UISharp SetAlignItems(Align alignment = Align.Auto)
+        public UISharp AlignItems(Align alignment = Align.Auto)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -416,7 +416,7 @@ namespace UITKsharp
         /// <summary>Sets border property of VisualElement.</summary>
         /// <param name="color">Color of the border.</param>
         /// <param name="width">Width of the border.</param>
-        public UISharp SetBorder(StyleColor color, float width)
+        public UISharp Border(StyleColor color, float width)
         {
             if (visualElement == null || color == null)
                 throw new System.Exception("UTKSharp : VisualElement and Color can't be null!");
@@ -435,7 +435,7 @@ namespace UITKsharp
 
         /// <summary>Sets position of style.position property to VisualElement.</summary>
         /// <param name="value">New position to be assigned.</param>
-        public UISharp SetPosition(StyleEnum<Position> value)
+        public UISharp Position(StyleEnum<Position> value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and position value can't be null!");
@@ -446,7 +446,7 @@ namespace UITKsharp
 
         /// <summary>Sets opacity of style.opacity property to a VisualElement.</summary>
         /// <param name="value">New opacity value (0-1 min/max ratio) to be assigned.</param>
-        public UISharp SetOpacity(StyleFloat value)
+        public UISharp Opacity(StyleFloat value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and position value can't be null!");
@@ -457,7 +457,7 @@ namespace UITKsharp
 
         /// <summary>Sets overflow of style.overflow property to a VisualElement.</summary>
         /// <param name="overflow">New position to be assigned.</param>
-        public UISharp SetOverflow(Overflow overflow = Overflow.Visible)
+        public UISharp Overflow(Overflow overflow = UnityEngine.UIElements.Overflow.Visible)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -468,7 +468,7 @@ namespace UITKsharp
 
         /// <summary>Sets maximum height of style.maxHeight property to a VisualElement.</summary>
         /// <param name="value">New maxHeight value to be assigned.</param>
-        public UISharp SetMaxHeight(StyleLength value)
+        public UISharp MaxHeight(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -479,7 +479,7 @@ namespace UITKsharp
 
         /// <summary>Sets minimum height of style.maxHeight property to a VisualElement.</summary>
         /// <param name="value">New minHeight value to be assigned.</param>
-        public UISharp SetMinHeight(StyleLength value)
+        public UISharp MinHeight(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -490,7 +490,7 @@ namespace UITKsharp
 
         /// <summary>Sets maximum width of style.maxWidth property to a VisualElement.</summary>
         /// <param name="value">New maxWidth value to be assigned.</param>
-        public UISharp SetMaxWidth(StyleLength value)
+        public UISharp MaxWidth(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -500,7 +500,7 @@ namespace UITKsharp
         }
         /// <summary>Sets minimum width of style.minWidth property to a VisualElement.</summary>
         /// <param name="value">New minWidth value to be assigned.</param>
-        public UISharp SetMinWidth(StyleLength value)
+        public UISharp MinWidth(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -511,7 +511,7 @@ namespace UITKsharp
 
         /// <summary>Sets rotation of style.rotate property to a VisualElement.</summary>
         /// <param name="value">Rotation value to be assigned.</param>
-        public UISharp SetRotation(StyleRotate value)
+        public UISharp Rotation(StyleRotate value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -522,7 +522,7 @@ namespace UITKsharp
 
         /// <summary>Justifies content of a VisualElement.</summary>
         /// <param name="value">New minWidth value to be assigned.</param>
-        public UISharp SetJustifyContent(StyleEnum<Justify> value)
+        public UISharp JustifyContent(StyleEnum<Justify> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -533,7 +533,7 @@ namespace UITKsharp
 
         /// <summary>Assign left value of a style.left to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
-        public UISharp SetLeft(StyleLength value)
+        public UISharp Left(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -544,7 +544,7 @@ namespace UITKsharp
 
         /// <summary>Assign right value of a style.right to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
-        public UISharp SetRight(StyleLength value)
+        public UISharp Right(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -555,7 +555,7 @@ namespace UITKsharp
 
         /// <summary>Assign top value of a style.top to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
-        public UISharp SetTop(StyleLength value)
+        public UISharp Top(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -566,7 +566,7 @@ namespace UITKsharp
 
         /// <summary>Assign bottom value of a style.bottom to VisualElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
-        public UISharp SetBottom(StyleLength value)
+        public UISharp Bottom(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -577,7 +577,7 @@ namespace UITKsharp
 
         /// <summary>Assign scale value of a style.scale to VisualElement.</summary>
         /// <param name="value">StyleScale value to be assigned.</param>
-        public UISharp SetScale(StyleScale value)
+        public UISharp Scale(StyleScale value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -588,7 +588,7 @@ namespace UITKsharp
 
         /// <summary>Sets cursor when overed on top of VisualElement.</summary>
         /// <param name="value">StyleCursor value to be assigned.</param>
-        public UISharp SetCursor(StyleCursor value)
+        public UISharp Cursor(StyleCursor value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -599,7 +599,7 @@ namespace UITKsharp
 
         /// <summary>Sets bacground scale mode of VisualElement.</summary>
         /// <param name="value">StyleCursor value to be assigned.</param>
-        public UISharp SetBcgScaleMode(StyleEnum<ScaleMode> value)
+        public UISharp BackgroundScaleMode(StyleEnum<ScaleMode> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -610,7 +610,7 @@ namespace UITKsharp
 
         /// <summary>Sets drop shadow of a TextElement.</summary>
         /// <param name="value">StyleTextShadow value to be assigned.</param>
-        public UISharp SetTextShadow(StyleTextShadow value)
+        public UISharp TextShadow(StyleTextShadow value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -621,7 +621,7 @@ namespace UITKsharp
 
         /// <summary>Sets spacing of TextElement.</summary>
         /// <param name="value">StyleLength value to be assigned.</param>
-        public UISharp SetWordSpacing(StyleLength value)
+        public UISharp WordSpacing(StyleLength value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -633,7 +633,7 @@ namespace UITKsharp
         /// <summary>Sets spacing of TextElement.</summary>
         /// <param name="value">String value to be assigned.</param>
         /// <param name="ignoreTypeMismatchError">Ignores type mismatch warnings/throws.</param>
-        public UISharp SetText(string value, bool ignoreTypeMismatchError = true)
+        public UISharp Text(string value, bool ignoreTypeMismatchError = true)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -658,7 +658,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition delay of VisualElement.</summary>
         /// <param name="value">StyleList timeValue value to be assigned.</param>
-        public UISharp SetTransitionDelay(StyleList<TimeValue> value)
+        public UISharp TransitionDelay(StyleList<TimeValue> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -669,7 +669,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition property of VisualElement.</summary>
         /// <param name="value">StyleList propertyName value to be assigned.</param>
-        public UISharp SetTransitionProperty(StyleList<StylePropertyName> value)
+        public UISharp TransitionProperty(StyleList<StylePropertyName> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -680,7 +680,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition origin of VisualElement.</summary>
         /// <param name="value">StyleTransformOrigin value to be assigned.</param>
-        public UISharp SetTransformOrigin(StyleTransformOrigin value)
+        public UISharp TransformOrigin(StyleTransformOrigin value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -691,7 +691,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition easing option of VisualElement.</summary>
         /// <param name="value">Stylelist easingFunction value to be assigned.</param>
-        public UISharp SetTransitionTiming(StyleList<EasingFunction> value)
+        public UISharp TransitionTiming(StyleList<EasingFunction> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -702,7 +702,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition duration of VisualElement.</summary>
         /// <param name="value">StyleList timeValue value to be assigned.</param>
-        public UISharp SetTransitionDuration(StyleList<TimeValue> value)
+        public UISharp TransitionDuration(StyleList<TimeValue> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -713,7 +713,7 @@ namespace UITKsharp
 
         /// <summary>Sets transition property of VisualElement.</summary>
         /// <param name="value">StyleList easingFunction  value to be assigned.</param>
-        public UISharp SetTransitionProperty(StyleList<EasingFunction> value)
+        public UISharp TransitionProperty(StyleList<EasingFunction> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -735,7 +735,7 @@ namespace UITKsharp
 
         /// <summary>Word wrapping over multiple lines if not enough space is available to draw the text of an element.</summary>
         /// <param name="value">Value to be assigned.</param>
-        public UISharp SetWhiteSpace(StyleEnum<WhiteSpace> value)
+        public UISharp WhiteSpace(StyleEnum<WhiteSpace> value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -749,7 +749,7 @@ namespace UITKsharp
         /// <param name="right">Right side padding.</param>
         /// <param name="top">Top side padding.</param>
         /// <param name="bottom">Bottom side padding.</param>
-        public UISharp SetPadding(float? left, float? right, float? top, float? bottom)
+        public UISharp Padding(float? left, float? right, float? top, float? bottom)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -768,21 +768,21 @@ namespace UITKsharp
 
         /// <summary>Visibility of a VisualElement.</summary>
         /// <param name="enable">Visibility state of a VisualElement.</param>
-        public UISharp SetVisibility(bool enable = true)
+        public UISharp Visibility(bool enable = true)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
 
             if (enable)
-                visualElement.style.visibility = Visibility.Visible;
+                visualElement.style.visibility = UnityEngine.UIElements.Visibility.Visible;
             else
-                visualElement.style.visibility = Visibility.Hidden;
+                visualElement.style.visibility = UnityEngine.UIElements.Visibility.Hidden;
             return this;
         }
 
         /// <summary>Defines how a VisualElement displayed in a layout.</summary>
         /// <param name="displayStyle">Display style of a VisualElement in a layout.</param>
-        public UISharp SetDisplay(DisplayStyle displayStyle = DisplayStyle.Flex)
+        public UISharp Display(DisplayStyle displayStyle = DisplayStyle.Flex)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -793,7 +793,7 @@ namespace UITKsharp
 
         /// <summary>Translate transformation.</summary>
         /// <param name="value">Translate value.</param>
-        public UISharp SetTranslate(StyleTranslate value)
+        public UISharp Translate(StyleTranslate value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -804,7 +804,7 @@ namespace UITKsharp
 
         /// <summary>Direction type of an axis.</summary>
         /// <param name="value">Directions type to the axis.</param>
-        public UISharp SetFlexDirection(FlexDirection flexDirection)
+        public UISharp FlexDirection(FlexDirection flexDirection)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -815,7 +815,7 @@ namespace UITKsharp
 
         /// <summary>Direction type of an axis.</summary>
         /// <param name="value">Shrinks behavior in a container.</param>
-        public UISharp SetFlexGrow(StyleFloat value)
+        public UISharp FlexGrow(StyleFloat value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
@@ -826,7 +826,7 @@ namespace UITKsharp
 
         /// <summary>Background image of VisualElement.</summary>
         /// <param name="value">Background value</param>
-        public UISharp SetBcgImageTint(StyleBackground value)
+        public UISharp BackgroundImageTint(StyleBackground value)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
@@ -837,7 +837,7 @@ namespace UITKsharp
 
         /// <summary>Shrink relative to the rest of items in a container.</summary>
         /// <param name="value">Shrinks behavior in a container.</param>
-        public UISharp SetFlexShrink(StyleFloat value)
+        public UISharp FlexShrink(StyleFloat value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
@@ -848,7 +848,7 @@ namespace UITKsharp
 
         /// <summary>Warps relative to the rest of items in a container.</summary>
         /// <param name="value">Warp mode behavior.</param>
-        public UISharp SetFlexWrap(Wrap value = Wrap.NoWrap)
+        public UISharp FlexWrap(Wrap value = Wrap.NoWrap)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement value can't be null!");
@@ -859,7 +859,7 @@ namespace UITKsharp
 
         /// <summary>Sets the size of a font.</summary>
         /// <param name="value">Font size value.</param>
-        public UISharp SetFontSize(StyleLength value)
+        public UISharp FontSize(StyleLength value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and value can't be null!");
@@ -870,7 +870,7 @@ namespace UITKsharp
 
         /// <summary>Determines background color of a VisualElement.</summary>
         /// <param name="value">Color value to assigned for the background.</param>
-        public UISharp SetBcgColor(StyleColor color)
+        public UISharp BackgroundColor(StyleColor color)
         {
             if (visualElement == null || color == null)
                 throw new System.Exception("UTKSharp : VisualElement and Color can't be null!");
@@ -881,7 +881,7 @@ namespace UITKsharp
 
         /// <summary>Sets the width size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
-        public UISharp SetWidth(float? value, bool dynamic = false)
+        public UISharp Width(float? value, bool dynamic = false)
         {
             if (visualElement == null || !value.HasValue)
                 throw new System.Exception("UTKSharp : VisualElement and value can't be null!");
@@ -896,7 +896,7 @@ namespace UITKsharp
 
         /// <summary>Sets the height size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
-        public UISharp SetHeight(float? value, bool dynamic = false)
+        public UISharp Height(float? value, bool dynamic = false)
         {
             if (visualElement == null || !value.HasValue)
                 throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
@@ -914,7 +914,7 @@ namespace UITKsharp
         /// <param name="rightValue">Right side margin value.</param>
         /// <param name="topValue">Top side margin value.</param>
         /// <param name="bottomValue">Bottom side margin value.</param>
-        public UISharp SetMargin(float? leftValue, float? rightValue, float? topValue, float? bottomValue)
+        public UISharp Margin(float? leftValue, float? rightValue, float? topValue, float? bottomValue)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -936,7 +936,7 @@ namespace UITKsharp
 
         /// <summary>Sets userData as object type.</summary>
         /// <param name="userData">Left side margin value.</param>
-        public UISharp SetUserData(System.Object userData)
+        public UISharp UserData(System.Object userData)
         {
             if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement can't be null!");
@@ -951,7 +951,7 @@ namespace UITKsharp
         /// <summary>Sets the parent of VisualElement.</summary>
         /// <param name="parent">Parent VisualElement.</param>
         /// <param name="markDirtyRepaint">Dirties the layout to be repainted after reparenting.</param>
-        public UISharp SetParent(VisualElement parent, bool markDirtyRepaint = false)
+        public UISharp Parent(VisualElement parent, bool markDirtyRepaint = false)
         {
             if (visualElement == null || parent == null)
                 throw new System.Exception("UTKSharp : Child and parent can't be null!");
@@ -966,7 +966,7 @@ namespace UITKsharp
 
         /// <summary>Sets name property of a VisualElement.</summary>
         /// <param name="name">Name of the VisualElement to be assigned.</param>
-        public UISharp SetName(string name)
+        public UISharp Name(string name)
         {
             if (visualElement == null || String.IsNullOrEmpty(name))
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -977,7 +977,7 @@ namespace UITKsharp
 
         /// <summary>Tints image background.</summary>
         /// <param name="styleBackground">StyleColor to be assigned.</param>
-        public UISharp SetUBcgImageTint(StyleColor styleBackground)
+        public UISharp UnityBackgroundImageTint(StyleColor styleBackground)
         {
             if (visualElement == null || styleBackground == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -988,7 +988,7 @@ namespace UITKsharp
 
         /// <summary>Background scale mode.</summary>
         /// <param name="scaleMode">ScaleMode value to be assigned.</param>
-        public UISharp SetUBcgScaleMode(StyleEnum<ScaleMode> scaleMode)
+        public UISharp UnityBackgroundScaleMode(StyleEnum<ScaleMode> scaleMode)
         {
             if (visualElement == null || scaleMode == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -999,7 +999,7 @@ namespace UITKsharp
 
         /// <summary>Sets custom font.</summary>
         /// <param name="styleFont">Font type to be assigned.</param>
-        public UISharp SetUFont(StyleFont styleFont)
+        public UISharp UnityFont(StyleFont styleFont)
         {
             if (visualElement == null || styleFont == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1010,7 +1010,7 @@ namespace UITKsharp
 
         /// <summary>Sets custom font.</summary>
         /// <param name="fontDefinition">Font type to be assigned.</param>
-        public UISharp SetUFontDefinition(StyleFontDefinition fontDefinition)
+        public UISharp UnityFontDefinition(StyleFontDefinition fontDefinition)
         {
             if (visualElement == null || fontDefinition == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1021,7 +1021,7 @@ namespace UITKsharp
 
         /// <summary>Sets font's style and weight.</summary>
         /// <param name="fontStyle">FontStyle type to be assigned.</param>
-        public UISharp SetUFontStyleAndWeight(StyleEnum<FontStyle> fontStyle)
+        public UISharp UnityFontStyleAndWeight(StyleEnum<FontStyle> fontStyle)
         {
             if (visualElement == null || fontStyle == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1032,7 +1032,7 @@ namespace UITKsharp
 
         /// <summary>Sets clipbox overflow mode.</summary>
         /// <param name="overflowClipbox">OverflowClipbox styleEnum to be assigned.</param>
-        public UISharp SetUOverflowClipbox(StyleEnum<OverflowClipBox> overflowClipbox)
+        public UISharp UnityOverflowClipbox(StyleEnum<OverflowClipBox> overflowClipbox)
         {
             if (visualElement == null || overflowClipbox == null)
                 throw new System.Exception("UTKSharp :VisualElement and it's parameter can't be null!");
@@ -1043,7 +1043,7 @@ namespace UITKsharp
 
         /// <summary>Sets paragraph spacing.</summary>
         /// <param name="styleLength">Paragraph spacing value to be assigned.</param>
-        public UISharp SetUParagraphSpacing(StyleLength styleLength)
+        public UISharp UnityParagraphSpacing(StyleLength styleLength)
         {
             if (visualElement == null || styleLength == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1054,7 +1054,7 @@ namespace UITKsharp
 
         /// <summary>Sets left slice.</summary>
         /// <param name="value">Left slice value assigned.</param>
-        public UISharp SetUSliceLeft(StyleInt value)
+        public UISharp UnitySliceLeft(StyleInt value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1065,7 +1065,7 @@ namespace UITKsharp
 
         /// <summary>Sets right slice.</summary>
         /// <param name="value">Right slice value to be assigned.</param>
-        public UISharp SetUSliceRight(StyleInt value)
+        public UISharp UnitySliceRight(StyleInt value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1076,7 +1076,7 @@ namespace UITKsharp
 
         /// <summary>Sets top slice.</summary>
         /// <param name="overflowClipbox">Top slice value to be assigned.</param>
-        public UISharp SetUSliceTop(StyleInt value)
+        public UISharp UnitySliceTop(StyleInt value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1087,7 +1087,7 @@ namespace UITKsharp
 
         /// <summary>Sets bottom slice.</summary>
         /// <param name="overflowClipbox">Bottom slice value to be assigned.</param>
-        public UISharp SetUSliceBottom(StyleInt value)
+        public UISharp UnitySliceBottom(StyleInt value)
         {
             if (visualElement == null || value == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1098,7 +1098,7 @@ namespace UITKsharp
 
         /// <summary>Sets text alignment.</summary>
         /// <param name="alignment">Text alignment mode.</param>
-        public UISharp SetUTextAlign(StyleEnum<TextAnchor> alignment)
+        public UISharp UnityTextAlign(StyleEnum<TextAnchor> alignment)
         {
             if (visualElement == null || alignment == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1108,7 +1108,7 @@ namespace UITKsharp
         }
         /// <summary>Sets text outline color.</summary>
         /// <param name="alignment">Bottom slice value to be assigned.</param>
-        public UISharp SetUTextOutlineColor(StyleColor color)
+        public UISharp UnityTextOutlineColor(StyleColor color)
         {
             if (visualElement == null || color == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1119,7 +1119,7 @@ namespace UITKsharp
 
         /// <summary>Sets text outline color.</summary>
         /// <param name="alignment">Bottom slice value to be assigned.</param>
-        public UISharp SetUTextOutlineWidth(StyleFloat widthSize)
+        public UISharp UnityTextOutlineWidth(StyleFloat widthSize)
         {
             if (visualElement == null || widthSize == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1130,7 +1130,7 @@ namespace UITKsharp
 
         /// <summary>Sets bottom slice.</summary>
         /// <param name="alignment">Bottom slice value to be assigned.</param>
-        public UISharp SetUTextOverflowPosition(StyleEnum<TextOverflowPosition> overflowPosition)
+        public UISharp UnityTextOverflowPosition(StyleEnum<TextOverflowPosition> overflowPosition)
         {
             if (visualElement == null || overflowPosition == null)
                 throw new System.Exception("UTKSharp : VisualElement and it's parameter can't be null!");
@@ -1520,7 +1520,7 @@ namespace UITKsharp
             }
 
             root.name = "root";
-            UTKSharp.style(root).SetWidth(width, true).SetHeight(height, true).SetAlignItems(Align.Center).SetMargin(margin, margin, margin, margin);
+            UTKSharp.style(root).Width(width, true).Height(height, true).AlignItems(Align.Center).Margin(margin, margin, margin, margin);
             root.userData = (new List<VisualElement>(), new List<VisualElement>());
         }
         private List<VisualElement> GetUData(bool getMainContainer)
@@ -1553,6 +1553,7 @@ namespace UITKsharp
                 else
                 {
                     var getMainCon = GetUData(false);
+                    
                     if(getMainCon != null)
                         return getMainCon;
                 }
@@ -1566,7 +1567,7 @@ namespace UITKsharp
             if(id.HasValue)
                 vis.name = id.Value.ToString();
 
-            UTKSharp.style(vis).SetWidth(width, true).SetHeight(height, true);
+            UTKSharp.style(vis).Width(width, true).Height(height, true);
             GetUData(true).Add(vis);
             return this;
         }
@@ -1586,7 +1587,7 @@ namespace UITKsharp
 
                     if(horizontal)
                     {
-                        UTKSharp.style(udat[i]).SetFlexDirection(FlexDirection.Row);
+                        UTKSharp.style(udat[i]).FlexDirection(FlexDirection.Row);
                     }
 
                     for(int j = 0; j < pieces; j++)
