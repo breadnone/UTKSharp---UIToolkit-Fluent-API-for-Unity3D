@@ -1,22 +1,15 @@
 /* MIT License
 Copyright (c) 2023 UTKSharp
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 using System.Collections;
@@ -58,6 +51,16 @@ namespace UITKsharp
             });
             return this;
         }
+        public UISharpDropDownField SetBinding(IBinding bindingObject)
+        {
+            dropDownField.binding = bindingObject;
+            return this;
+        }
+        public UISharpDropDownField SetBindingPath(string bindingpath)
+        {
+            dropDownField.bindingPath = bindingpath;
+            return this;
+        }
     }
     public class UISharpLabel : UISharp
     {
@@ -75,6 +78,16 @@ namespace UITKsharp
         public UISharpLabel MarkDirtyRepaint()
         {
             label.MarkDirtyRepaint();
+            return this;
+        }
+        public UISharpLabel SetBinding(IBinding bindingObject)
+        {
+            label.binding = bindingObject;
+            return this;
+        }
+        public UISharpLabel SetBindingPath(string bindingpath)
+        {
+            label.bindingPath = bindingpath;
             return this;
         }
     }
@@ -104,6 +117,16 @@ namespace UITKsharp
             {
                 callback.Invoke(x.newValue);
             });
+            return this;
+        }
+        public UISharpRadioGroup SetBinding(IBinding bindingObject)
+        {
+            radioButtonGroup.binding = bindingObject;
+            return this;
+        }
+        public UISharpRadioGroup SetBindingPath(string bindingpath)
+        {
+            radioButtonGroup.bindingPath = bindingpath;
             return this;
         }
     }
@@ -458,6 +481,16 @@ namespace UITKsharp
             };
             return this;
         }
+        public UISharpButton SetBinding(IBinding bindingObject)
+        {
+            button.binding = bindingObject;
+            return this;
+        }
+        public UISharpButton SetBindingPath(string bindingpath)
+        {
+            button.bindingPath = bindingpath;
+            return this;
+        }
     }
     public class UISharpImage : UISharp
     {
@@ -711,6 +744,72 @@ namespace UITKsharp
         public UISharpListView ScrollToIndex(int index)
         {
             listView.ScrollToItem(index);
+            return this;
+        }
+        public UISharpListView SetBinding(IBinding bindingObject)
+        {
+            listView.binding = bindingObject;
+            return this;
+        }
+        public UISharpListView SetBindingPath(string bindingpath)
+        {
+            listView.bindingPath = bindingpath;
+            return this;
+        }
+    }
+    public class UISharpProgressBar : UISharp
+    {
+        public ProgressBar progressBar { get; set; }
+
+        public UISharpProgressBar(ProgressBar progressbar, string buttonText = "") : base(progressbar)
+        {
+            if (progressbar == null)
+                throw new Exception("UISharp : Button element can't be null or empty");
+
+            progressBar = progressbar;
+        }
+
+        public UISharpProgressBar MarkDirtyRepaint()
+        {
+            progressBar.MarkDirtyRepaint();
+            return this;
+        }
+        public UISharpProgressBar Title(string title)
+        {
+            progressBar.title = title;
+            return this;
+        }
+        public UISharpProgressBar LowValue(float value)
+        {
+            progressBar.lowValue = value;
+            return this;
+        }
+        public UISharpProgressBar HighValue(float value)
+        {
+            progressBar.highValue = value;
+            return this;
+        }
+        public UISharpProgressBar Value(float value)
+        {
+            progressBar.value = value;
+            return this;
+        }
+        public UISharpProgressBar SetValueChanged(Action<float> callback)
+        {
+            progressBar.RegisterValueChangedCallback((x) =>
+            {
+                callback.Invoke(x.newValue);
+            });
+            return this;
+        }
+        public UISharpProgressBar SetBinding(IBinding bindingObject)
+        {
+            progressBar.binding = bindingObject;
+            return this;
+        }
+        public UISharpProgressBar SetBindingPath(string bindingpath)
+        {
+            progressBar.bindingPath = bindingpath;
             return this;
         }
     }
