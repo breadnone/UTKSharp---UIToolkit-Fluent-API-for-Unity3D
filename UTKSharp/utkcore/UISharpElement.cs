@@ -38,11 +38,6 @@ namespace UITKsharp
             dropDownField.value = list[selectedDefault];
         }
 
-        public UISharpDropDownField MarkDirtyRepaint()
-        {
-            dropDownField.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpDropDownField RegisterValueChanged(Action<string> callback)
         {
             dropDownField.RegisterValueChangedCallback(x =>
@@ -75,11 +70,6 @@ namespace UITKsharp
             label.text = labelText;
         }
 
-        public UISharpLabel MarkDirtyRepaint()
-        {
-            label.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpLabel SetBinding(IBinding bindingObject)
         {
             label.binding = bindingObject;
@@ -104,12 +94,6 @@ namespace UITKsharp
             radioButtonGroup.labelElement.text = labelText;
             radioButtonGroup.choices = choices;
             radioButtonGroup.value = defaultSelected;
-        }
-
-        public UISharpRadioGroup MarkDirtyRepaint()
-        {
-            radioButtonGroup.MarkDirtyRepaint();
-            return this;
         }
         public UISharpRadioGroup SetValueChangedEvent(Action<int> callback)
         {
@@ -144,11 +128,6 @@ namespace UITKsharp
             radioButton.value = defaultValue;
         }
 
-        public UISharpRadioButton MarkDirtyRepaint()
-        {
-            radioButton.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpRadioButton SetLabelBcgColor(StyleColor color)
         {
             radioButton.labelElement.style.backgroundColor = color;
@@ -186,11 +165,6 @@ namespace UITKsharp
             popupWindow.text = labelText;
         }
 
-        public UISharpPopUpWindow MarkDirtyRepaint()
-        {
-            popupWindow.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpPopUpWindow SetBinding(IBinding bindingObject)
         {
             popupWindow.binding = bindingObject;
@@ -216,11 +190,6 @@ namespace UITKsharp
             textField.labelElement.text = labelField;
         }
 
-        public UISharpTextField MarkDirtyRepaint()
-        {
-            textField.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpTextField SetValueChangedEvent(Action<string> callback)
         {
             textField.RegisterValueChangedCallback(x =>
@@ -295,11 +264,6 @@ namespace UITKsharp
             box = boxElement;
         }
 
-        public UISharpBox MarkDirtyRepaint()
-        {
-            box.MarkDirtyRepaint();
-            return this;
-        }
     }
     public class UISharpMinMaxSlider : UISharp
     {
@@ -317,11 +281,6 @@ namespace UITKsharp
             minMaxSlider.maxValue = maxValue;
         }
 
-        public UISharpMinMaxSlider MarkDirtyRepaint()
-        {
-            minMaxSlider.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpMinMaxSlider SetDefaultValue(Vector2 value)
         {
             minMaxSlider.value = value;
@@ -373,11 +332,6 @@ namespace UITKsharp
             }
         }
 
-        public UISharpSlider MarkDirtyRepaint()
-        {
-            slider.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpSlider SetInverted(bool state)
         {
             slider.inverted = state;
@@ -431,11 +385,6 @@ namespace UITKsharp
             toggle.value = defaultValue;
         }
 
-        public UISharpToggle MarkDirtyRepaint()
-        {
-            toggle.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpToggle SetStateChangedEvent(Action<bool> state)
         {
             toggle.RegisterValueChangedCallback(x =>
@@ -468,11 +417,6 @@ namespace UITKsharp
             button.text = buttonText;
         }
 
-        public UISharpButton MarkDirtyRepaint()
-        {
-            button.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpButton SetClicked(Action callback)
         {
             button.clicked += () =>
@@ -504,11 +448,6 @@ namespace UITKsharp
             image = imageElement;
         }
 
-        public UISharpImage MarkDirtyRepaint()
-        {
-            image.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpImage SetImage(Texture texture)
         {
             image.image = texture;
@@ -641,11 +580,6 @@ namespace UITKsharp
             listView.Rebuild();
         }
 
-        public UISharpListView MarkDirtyRepaint()
-        {
-            listView.MarkDirtyRepaint();
-            return this;
-        }
         public UISharpListView SetHorizontalScroll(bool state)
         {
             listView.horizontalScrollingEnabled = state;
@@ -767,12 +701,6 @@ namespace UITKsharp
                 throw new Exception("UISharp : Button element can't be null or empty");
 
             progressBar = progressbar;
-        }
-
-        public UISharpProgressBar MarkDirtyRepaint()
-        {
-            progressBar.MarkDirtyRepaint();
-            return this;
         }
         public UISharpProgressBar Title(string title)
         {

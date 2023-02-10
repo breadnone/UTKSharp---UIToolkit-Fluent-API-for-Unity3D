@@ -208,6 +208,11 @@ namespace UITKsharp
             var uielement = new UISharpMinMaxSlider(slider, minValue, lowLimit, highLimit, maxValue, labelField);
             return uielement;
         }
+        public static UISharpProgressBar progreeeBarElement(ProgressBar progressBar)
+        {
+            var uielement = new UISharpProgressBar(progressBar);
+            return uielement;
+        }
 
         /// <summary>Instantiates Box UIElement.</summary>
         /// <param name="box">The Box object.</param>
@@ -1167,6 +1172,11 @@ namespace UITKsharp
         public VisualElement Return()
         {
             return visualElement;
+        }
+        public UISharp MarkDirtyRepaint()
+        {
+            visualElement.MarkDirtyRepaint();
+            return this;
         }
     }
     public static class UTKSharpElement
