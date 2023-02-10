@@ -2,7 +2,7 @@
 Fluent api for UIToolkit completely written in c#.
 
 <br>Compatible with Unity 2022.2+.</br>
-Still on-progress, most likely it will break on every update due to api style changes(currently the naming convention is a bit long)
+Still on-progress, most likely it will break on every update due to api style changes.(currently the naming convention is a bit long)
 
 # How-To:
 Add a refernce to UITKSharp namespace `using UITKsharp;`
@@ -56,8 +56,7 @@ RadioButton
 (More to come)  
 
 # Installation  
-Download from release page(UTKSharp-v1.zip)  
-Unpack/unzip it, then copy to your project's Asset folder  
+Download the source code as zip. Unpack/unzip it to your project's Asset folder.  
 
 # Note:
 Common functionality related to USS/UXML class was intentionaly not added for obvious reason.  
