@@ -27,6 +27,7 @@ namespace UITKsharp
     public interface ISharpStyle
     {
         //public UISharp GetSourceVisualElement(T visualElement, float value, bool dynamic = false);
+        public UISharp Size(float width, float height, bool dynamic = false);
         public UISharp Width(float value, bool dynamic = false);
         public UISharp Color(StyleColor color);
         public UISharp Height(float value, bool dynamic = false);

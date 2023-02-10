@@ -880,7 +880,8 @@ namespace UITKsharp
         }
 
         /// <summary>Sets the width size of a VisualElement.</summary>
-        /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
+        /// <param name="value">Width value.</param>
+        /// <param name="dynamic">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
         public UISharp Width(float value, bool dynamic = false)
         {
             if (visualElement == null)
@@ -893,9 +894,31 @@ namespace UITKsharp
 
             return this;
         }
+        /// <summary>Sets both width and height style of a VisualElement.</summary>
+        /// <param name="width">Width value.</param>
+        /// <param name="heigth">Height value.</param>
+        /// <param name="dynamic">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
+        public UISharp Size(float width, float height, bool dynamic = false)
+        {
+            if (visualElement == null)
+                throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
+            if (!dynamic)
+            {
+                visualElement.style.height = height;
+                visualElement.style.width = width;
+            }
+            else
+            {
+                visualElement.style.height = new StyleLength(new Length(height, LengthUnit.Percent));
+                visualElement.style.width = new StyleLength(new Length(width, LengthUnit.Percent));
+            }
+
+            return this;
+        }
         /// <summary>Sets the height size of a VisualElement.</summary>
-        /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
+        /// <param name="value">Height value.</param>
+        /// <param name="dynamic">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
         public UISharp Height(float value, bool dynamic = false)
         {
             if (visualElement == null)
