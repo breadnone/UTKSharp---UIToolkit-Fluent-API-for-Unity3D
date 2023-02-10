@@ -27,9 +27,9 @@ namespace UITKsharp
     public interface ISharpStyle
     {
         //public UISharp GetSourceVisualElement(T visualElement, float value, bool dynamic = false);
-        public UISharp Width(float? value, bool dynamic = false);
+        public UISharp Width(float value, bool dynamic = false);
         public UISharp Color(StyleColor color);
-        public UISharp Height(float? value, bool dynamic = false);
+        public UISharp Height(float value, bool dynamic = false);
         public UISharp Margin(float? leftValue, float? rightValue, float? topValue, float? bottomValue);
         public UISharp Padding(float? left, float? right, float? top, float? bottom);
         public UISharp BackgroundColor(StyleColor color);
@@ -91,9 +91,9 @@ namespace UITKsharp
     public interface ISharpResolvedStyle
     {
         //public UISharp GetSourceVisualElement(T visualElement, float value, bool dynamic = false);
-        public UISharp ResolveWidth(float? value, bool dynamic = false);
+        public UISharp ResolveWidth(float value, bool dynamic = false);
         public UISharp ResolveColor(StyleColor color);
-        public UISharp ResolveHeight(float? value, bool dynamic = false);
+        public UISharp ResolveHeight(float value, bool dynamic = false);
         public UISharp ResolveMargin(float? leftValue, float? rightValue, float? topValue, float? bottomValue);
         public UISharp ResolvePadding(float? left, float? right, float? top, float? bottom);
         public UISharp ResolveBackgroundColor(StyleColor color);

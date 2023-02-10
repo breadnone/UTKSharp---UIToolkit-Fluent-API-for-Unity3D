@@ -881,30 +881,30 @@ namespace UITKsharp
 
         /// <summary>Sets the width size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
-        public UISharp Width(float? value, bool dynamic = false)
+        public UISharp Width(float value, bool dynamic = false)
         {
-            if (visualElement == null || !value.HasValue)
+            if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement and value can't be null!");
 
             if (!dynamic)
-                visualElement.style.width = value.Value;
+                visualElement.style.width = value;
             else
-                visualElement.style.width = new StyleLength(new Length(value.Value, LengthUnit.Percent));
+                visualElement.style.width = new StyleLength(new Length(value, LengthUnit.Percent));
 
             return this;
         }
 
         /// <summary>Sets the height size of a VisualElement.</summary>
         /// <param name="value">Value in pixel if dynamic = false, in percent if dynamic = true.</param>
-        public UISharp Height(float? value, bool dynamic = false)
+        public UISharp Height(float value, bool dynamic = false)
         {
-            if (visualElement == null || !value.HasValue)
+            if (visualElement == null)
                 throw new System.Exception("UTKSharp : VisualElement and float value can't be null!");
 
             if (!dynamic)
-                visualElement.style.height = value.Value;
+                visualElement.style.height = value;
             else
-                visualElement.style.height = new StyleLength(new Length(value.Value, LengthUnit.Percent));
+                visualElement.style.height = new StyleLength(new Length(value, LengthUnit.Percent));
 
             return this;
         }
