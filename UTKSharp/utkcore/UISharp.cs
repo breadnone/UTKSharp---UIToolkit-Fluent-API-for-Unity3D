@@ -21,11 +21,11 @@ using System.Collections.Generic;
 
 //VisualElement visualElement = new VisualElement();
 //var parentVisualElement = new VisualElement();
-//Sets style                ::  UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement).SetName("childAsName");
+//Sets style                ::  UTKSharp.style(visualElement).SetBcgColor(Color.blue).SetParent(parentVisualElement).Name("childAsName");
 //Adds Event                ::  UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("KeyPressed!"));
-//Instantiate Box element   ::  UTKSharp.boxElement(new Box()).SetWidth(100, dynamic: true).SetHeight(50, dynamic: true).SetAlignContent(Align.Center);
+//Instantiate Box element   ::  UTKSharp.boxElement(new Box()).Width(100, dynamic: true).Height(50, dynamic: true).AlignContent(Align.Center);
 //Gets child                ::  parentVisualElement = UTKSharp.GetChild(parentVisualElement, "childAsName");
-//Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).SetName("viInstance").Return();
+//Returns self              ::  var vis =  UTKSharp.style(new VisualElement()).Name("viInstance").Return();
 
 /* UTKSharp.construct
 var parentOne = new VisualElement(); var childOne = new VisualElement();
