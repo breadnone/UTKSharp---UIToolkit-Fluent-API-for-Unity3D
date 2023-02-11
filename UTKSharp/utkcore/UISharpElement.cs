@@ -21,7 +21,7 @@ using System;
 namespace UITKsharp
 {
 
-    public class UISharpDropDownField : UISharp, ISharpBinding
+    public class UISharpDropDownField : UISharp
     {
         public DropdownField dropDownField { get; set; }
 
@@ -686,7 +686,7 @@ namespace UITKsharp
     {
         public ProgressBar progressBar { get; set; }
 
-        public UISharpProgressBar(ProgressBar progressbar, string buttonText = "") : base(progressbar)
+        public UISharpProgressBar(ProgressBar progressbar) : base(progressbar)
         {
             if (progressbar == null)
                 throw new Exception("UISharp : Button element can't be null or empty");
