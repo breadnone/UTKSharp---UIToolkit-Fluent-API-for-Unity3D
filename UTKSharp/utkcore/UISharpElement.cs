@@ -60,17 +60,6 @@ namespace UITKsharp
             label = labelElement;
             label.text = labelText;
         }
-
-        public UISharpLabel SetBinding(IBinding bindingObject)
-        {
-            label.binding = bindingObject;
-            return this;
-        }
-        public UISharpLabel SetBindingPath(string bindingpath)
-        {
-            label.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpRadioGroup : UISharp
     {
@@ -94,16 +83,6 @@ namespace UITKsharp
             });
             return this;
         }
-        public UISharpRadioGroup SetBinding(IBinding bindingObject)
-        {
-            radioButtonGroup.binding = bindingObject;
-            return this;
-        }
-        public UISharpRadioGroup SetBindingPath(string bindingpath)
-        {
-            radioButtonGroup.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpRadioButton : UISharp
     {
@@ -122,16 +101,6 @@ namespace UITKsharp
         public UISharpRadioButton SetLabelBcgColor(StyleColor color)
         {
             radioButton.labelElement.style.backgroundColor = color;
-            return this;
-        }
-        public UISharpRadioButton SetBinding(IBinding bindingObject)
-        {
-            radioButton.binding = bindingObject;
-            return this;
-        }
-        public UISharpRadioButton SetBindingPath(string bindingpath)
-        {
-            radioButton.bindingPath = bindingpath;
             return this;
         }
         public UISharpRadioButton SetValueChangedEvent(Action<bool> callback)
@@ -156,16 +125,6 @@ namespace UITKsharp
             popupWindow.text = labelText;
         }
 
-        public UISharpPopUpWindow SetBinding(IBinding bindingObject)
-        {
-            popupWindow.binding = bindingObject;
-            return this;
-        }
-        public UISharpPopUpWindow SetBindingPath(string bindingpath)
-        {
-            popupWindow.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpTextField : UISharp
     {
@@ -232,16 +191,6 @@ namespace UITKsharp
             textField.tripleClickSelectsLine = state;
             return this;
         }
-        public UISharpTextField SetBinding(IBinding bindingObject)
-        {
-            textField.binding = bindingObject;
-            return this;
-        }
-        public UISharpTextField SetBindingPath(string bindingpath)
-        {
-            textField.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpBox : UISharp
     {
@@ -292,16 +241,6 @@ namespace UITKsharp
             minMaxSlider.labelElement.style.color = color;
             return this;
         }
-        public UISharpMinMaxSlider SetBinding(IBinding bindingObject)
-        {
-            minMaxSlider.binding = bindingObject;
-            return this;
-        }
-        public UISharpMinMaxSlider SetBindingPath(string bindingpath)
-        {
-            minMaxSlider.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpSlider : UISharp
     {
@@ -343,16 +282,6 @@ namespace UITKsharp
             slider.showMixedValue = state;
             return this;
         }
-        public UISharpSlider SetBinding(IBinding bindingObject)
-        {
-            slider.binding = bindingObject;
-            return this;
-        }
-        public UISharpSlider SetBindingPath(string bindingpath)
-        {
-            slider.bindingPath = bindingpath;
-            return this;
-        }
         public UISharpSlider SetValueChangedEvent(Action<float> callback)
         {
             slider.RegisterValueChangedCallback(x =>
@@ -384,16 +313,6 @@ namespace UITKsharp
             });
             return this;
         }
-        public UISharpToggle SetBinding(IBinding bindingObject)
-        {
-            toggle.binding = bindingObject;
-            return this;
-        }
-        public UISharpToggle SetBindingPath(string bindingpath)
-        {
-            toggle.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpButton : UISharp
     {
@@ -414,16 +333,6 @@ namespace UITKsharp
             {
                 callback.Invoke();
             };
-            return this;
-        }
-        public UISharpButton SetBinding(IBinding bindingObject)
-        {
-            button.binding = bindingObject;
-            return this;
-        }
-        public UISharpButton SetBindingPath(string bindingpath)
-        {
-            button.bindingPath = bindingpath;
             return this;
         }
     }
@@ -671,16 +580,6 @@ namespace UITKsharp
             listView.ScrollToItem(index);
             return this;
         }
-        public UISharpListView SetBinding(IBinding bindingObject)
-        {
-            listView.binding = bindingObject;
-            return this;
-        }
-        public UISharpListView SetBindingPath(string bindingpath)
-        {
-            listView.bindingPath = bindingpath;
-            return this;
-        }
     }
     public class UISharpProgressBar : UISharp
     {
@@ -721,16 +620,5 @@ namespace UITKsharp
             });
             return this;
         }
-        public UISharpProgressBar SetBinding(IBinding bindingObject)
-        {
-            progressBar.binding = bindingObject;
-            return this;
-        }
-        public UISharpProgressBar SetBindingPath(string bindingpath)
-        {
-            progressBar.bindingPath = bindingpath;
-            return this;
-        }
     }
-
 }
