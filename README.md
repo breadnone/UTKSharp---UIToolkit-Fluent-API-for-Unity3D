@@ -1,8 +1,7 @@
 # UTKSharp-UIToolkit-Fluent-API-for-Unity3D
 Fluent api for UIToolkit completely written in c#.
 
-<br>Compatible with Unity 2022.2+.</br>
-Still on-progress, most likely it will break on every update due to api style changes.(currently the naming convention is a bit long)
+<br>Requirement : Unity 2022.2+.</br>
 
 # How-To:
 Add a refernce to UITKSharp namespace `using UITKsharp;`
