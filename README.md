@@ -53,7 +53,7 @@ Toggle
 Button  
 Image  
 RadioButton  
-ProgressBar 
+ProgressBar  
 CustomSplitView  
 (More to come)  
 
