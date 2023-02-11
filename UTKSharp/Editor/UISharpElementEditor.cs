@@ -121,7 +121,6 @@ namespace UITKsharp.Editor
 
         public UISharpToolbar(ToolbarMenu[] toolbarMenus = null) : base(null)
         {
-
             toolBar = new Toolbar();
 
             if(toolbarMenus != null && toolbarMenus.Length > 0)

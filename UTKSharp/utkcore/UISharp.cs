@@ -57,6 +57,16 @@ namespace UITKsharp
     /// <summary>UTKSharp main class.</summary>
     public static class UTKSharp
     {
+        //EXPERIMENTAL!!
+        //var template = UTKSharp.style(new VisualElement()).Name("myTemplate").Height(100, true).Width(200);
+        //Workflow : UTKsharp.createTemplate(template);
+        //Use the template as shown below
+        //UTKSharp.style(new VisualElement()).UseTempalte("myTemplate");
+        //NOTE: Parented VisualElements aren't supported. Must be single instance without parent/child
+        public static void createTemplate(UISharp uISharp)
+        {
+            UISharpUtil.CreateUTKTemplate(uISharp);
+        }
         /// <summary>Generates custom splitView.</summary>
         /// <param name="width">The width of the VisualElement.</param>
         /// <param name="height">The height of the VisualElement.</param>
@@ -376,6 +386,13 @@ namespace UITKsharp
             visualElement = visualelement;
         }
 
+        //EXPERIMENTAL!! HIGHLY EXPENSIVE AND SHOULD BE USED IN EDIT-MODE ONLY!
+        /// <param name="templateName">Get the template from template manager.</param>
+        public UISharp UseTemplate(string templateName)
+        {
+            UISharpUtil.CloneStyle(visualElement.style, UISharpUtil.GetTemplate(templateName));
+            return this;
+        }
         /// <summary>Color of VisualElement.</summary>
         /// <param name="color">Type of alignment.</param>
         public UISharp Color(StyleColor color)
@@ -505,7 +522,7 @@ namespace UITKsharp
             visualElement.style.maxWidth = value;
             return this;
         }
-        
+
         /// <summary>Sets minimum width of style.minWidth property to a VisualElement.</summary>
         /// <param name="value">New minWidth value to be assigned.</param>
         public UISharp MinWidth(StyleLength value)
