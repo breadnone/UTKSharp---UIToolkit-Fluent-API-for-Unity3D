@@ -9,7 +9,7 @@ Add a refernce to UITKSharp namespace `using UITKsharp;`
 
 **Styling**<br>`UTKSharp.style(visualElement).BackgroundColor(Color.blue).SetParent(parentVisualElement);`<br/>  
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
-**UIElement**<br>`UTKSharp.boxElement(new Box()).Width(100, dynamic: true).SetHeight(50, true);`<br/>  
+**UIElement**<br>`UTKSharp.boxElement(new Box()).Width(100, dynamic: true).Height(50, true);`<br/>  
 
 **Constructing layout with `UTKSharp.construct() & UTKSharp.customSplitView()` methods**
 ```
