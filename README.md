@@ -11,6 +11,16 @@ Edit-mode(Custom editor) : UITKSharp.Editor
 **Styling**<br>`UTKSharp.style(visualElement).BackgroundColor(Color.blue).SetParent(parentVisualElement);`<br/>  
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
 **UIElement**<br>`UTKSharp.boxElement(new Box()).Width(100, dynamic: true).Height(50, true);`<br/>  
+**Making Templates**(experimental)   
+```
+        var template = UTKSharp.style(new VisualElement()).Name("myTemplate").Height(100, true).Width(200);
+        UTKsharp.createTemplate(template);
+        
+        //Use the template as shown below by finding the name of the VisualElement.
+        UTKSharp.style(new VisualElement()).UseTempalte("myTemplate");
+        
+        //NOTE: Templating on parented VisualElements aren't supported(Not tested). Must be single instance without parent/child.
+```
 
 **Constructing layout with `UTKSharp.construct() & UTKSharp.customSplitView()` methods**
 ```
