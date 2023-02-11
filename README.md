@@ -53,6 +53,8 @@ Toggle
 Button  
 Image  
 RadioButton  
+ProgressBar 
+CustomSplitView  
 (More to come)  
 
 # Installation  
