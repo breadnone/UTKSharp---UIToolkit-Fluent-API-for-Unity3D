@@ -4,7 +4,9 @@ Fluent api for UIToolkit completely written in c#.
 <br>Requirement : Unity 2022.2+.</br>
 
 # How-To:
-Add a refernce to UITKSharp namespace `using UITKsharp;`
+Runtime : Add a refernce to UITKSharp namespace `using UITKsharp;`  
+Edit-mode(Custom editor) : UITKSharp.Editor  
+
 
 **Styling**<br>`UTKSharp.style(visualElement).BackgroundColor(Color.blue).SetParent(parentVisualElement);`<br/>  
 **Event**<br>`UTKSharp.addEvent(visualElement).SetOnMouseDown((x)=> Debug.Log("Mouse Pressed!"));`<br/>  
