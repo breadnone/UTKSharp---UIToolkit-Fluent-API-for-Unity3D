@@ -64,6 +64,5 @@ Common functionality related to USS/UXML class was intentionaly not added for ob
 Not fully tested!  
 
 # TODO  
-Custom editor support(common ones, are partially implemented)  
 Transitions  
 Expose more apis. Curently it's limited to common ones(Most I often work with)  
