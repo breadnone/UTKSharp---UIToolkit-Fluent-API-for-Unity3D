@@ -21,7 +21,7 @@ using System;
 namespace UITKsharp
 {
 
-    public class UISharpDropDownField : UISharp
+    public class UISharpDropDownField : UISharp, ISharpBinding
     {
         public DropdownField dropDownField { get; set; }
 
@@ -46,16 +46,7 @@ namespace UITKsharp
             });
             return this;
         }
-        public UISharpDropDownField SetBinding(IBinding bindingObject)
-        {
-            dropDownField.binding = bindingObject;
-            return this;
-        }
-        public UISharpDropDownField SetBindingPath(string bindingpath)
-        {
-            dropDownField.bindingPath = bindingpath;
-            return this;
-        }
+        
     }
     public class UISharpLabel : UISharp
     {

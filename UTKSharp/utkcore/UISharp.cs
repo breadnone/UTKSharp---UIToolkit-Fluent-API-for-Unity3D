@@ -362,7 +362,7 @@ namespace UITKsharp
             return root.Children().ToArray();
         }
     }
-    public class UISharp : UIEvent, ISharpStyle, ISharpCommonMethod
+    public class UISharp : UIEvent, ISharpCommonMethod, ISharpBinding, ISharpStyle
     {
         /// <summary>ID for every UTK instances</summary>
         public string UISharpID { get; set; }
@@ -1103,7 +1103,7 @@ namespace UITKsharp
         }
 
         /// <summary>Sets top slice.</summary>
-        /// <param name="overflowClipbox">Top slice value to be assigned.</param>
+        /// <param name="value">Top slice value to be assigned.</param>
         public UISharp UnitySliceTop(StyleInt value)
         {
             if (visualElement == null || value == null)
@@ -1114,7 +1114,7 @@ namespace UITKsharp
         }
 
         /// <summary>Sets bottom slice.</summary>
-        /// <param name="overflowClipbox">Bottom slice value to be assigned.</param>
+        /// <param name="value">Bottom slice value to be assigned.</param>
         public UISharp UnitySliceBottom(StyleInt value)
         {
             if (visualElement == null || value == null)
@@ -1135,7 +1135,7 @@ namespace UITKsharp
             return this;
         }
         /// <summary>Sets text outline color.</summary>
-        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        /// <param name="color">Color of the outline.</param>
         public UISharp UnityTextOutlineColor(StyleColor color)
         {
             if (visualElement == null || color == null)
@@ -1146,7 +1146,7 @@ namespace UITKsharp
         }
 
         /// <summary>Sets text outline color.</summary>
-        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        /// <param name="widthSize">Outline width size.</param>
         public UISharp UnityTextOutlineWidth(StyleFloat widthSize)
         {
             if (visualElement == null || widthSize == null)
@@ -1157,7 +1157,7 @@ namespace UITKsharp
         }
 
         /// <summary>Sets bottom slice.</summary>
-        /// <param name="alignment">Bottom slice value to be assigned.</param>
+        /// <param name="overflowPosition">Position of the overflow.</param>
         public UISharp UnityTextOverflowPosition(StyleEnum<TextOverflowPosition> overflowPosition)
         {
             if (visualElement == null || overflowPosition == null)
@@ -1167,15 +1167,132 @@ namespace UITKsharp
             return this;
         }
 
-        /// <summary>Return the VisualElement that's being instantiated. Must be used at the very end of the method chain.</summary>
-        /// <param name="name">Name of the VisualElement to be assigned.</param>
+        /// <summary>Returns the VisualElement that's being instantiated. Must be used at the very end of the method chain.</summary>
         public VisualElement Return()
         {
             return visualElement;
         }
+        /// <summary>Forces repaint the VisualElement.</summary>
         public UISharp MarkDirtyRepaint()
         {
             visualElement.MarkDirtyRepaint();
+            return this;
+        }
+        /// <summary>Sets binding of a UIElement.</summary>
+        /// <param name="name">Path.</param>
+        public UISharp BindingPath(string bindingpath)
+        {
+            if(visualElement is Label lbl)
+            {
+                lbl.bindingPath = bindingpath;
+            }
+            else if(visualElement is RadioButton rdb)
+            {
+                rdb.bindingPath = bindingpath;
+            }
+            else if(visualElement is RadioButtonGroup rdbg)
+            {
+                rdbg.bindingPath = bindingpath;
+            }
+            else if(visualElement is DropdownField dropd)
+            {
+                dropd.bindingPath = bindingpath;
+            }
+            else if(visualElement is PopupWindow ppw)
+            {
+                ppw.bindingPath = bindingpath;
+            }
+            else if(visualElement is TextField txt)
+            {
+                txt.bindingPath = bindingpath;
+            }
+            else if(visualElement is MinMaxSlider mms)
+            {
+                mms.bindingPath = bindingpath;
+            }
+            else if(visualElement is Slider sld)
+            {
+                sld.bindingPath = bindingpath;
+            }
+            else if(visualElement is Toggle tgl)
+            {
+                tgl.bindingPath = bindingpath;
+            }
+            else if(visualElement is Button btn)
+            {
+                btn.bindingPath = bindingpath;
+            }
+            else if(visualElement is ListView lst)
+            {
+                lst.bindingPath = bindingpath;
+            }
+            else if(visualElement is ProgressBar pgb)
+            {
+                pgb.bindingPath = bindingpath;
+            }
+            else
+            {
+                throw new Exception("UTKSharp : The UIElement does not implement binding!");
+            }
+            return this;
+        }
+        /// <summary>Sets binding interface to the UIElement.</summary>
+        /// <param name="ibind">IBinding interface of UIElement</param>
+        public UISharp Binding(IBinding ibind)
+        {
+            if(visualElement is Label lbl)
+            {
+                lbl.binding = ibind;
+            }
+            else if(visualElement is RadioButton rdb)
+            {
+                rdb.binding = ibind;
+            }
+            else if(visualElement is RadioButtonGroup rdbg)
+            {
+                rdbg.binding = ibind;
+            }
+            else if(visualElement is DropdownField dropd)
+            {
+                dropd.binding = ibind;
+            }
+            else if(visualElement is PopupWindow ppw)
+            {
+                ppw.binding = ibind;
+            }
+            else if(visualElement is TextField txt)
+            {
+                txt.binding = ibind;
+            }
+            else if(visualElement is MinMaxSlider mms)
+            {
+                mms.binding = ibind;
+            }
+            else if(visualElement is Slider sld)
+            {
+                sld.binding = ibind;
+            }
+            else if(visualElement is Toggle tgl)
+            {
+                tgl.binding = ibind;
+            }
+            else if(visualElement is Button btn)
+            {
+                btn.binding = ibind;
+            }
+            else if(visualElement is ListView lst)
+            {
+                lst.binding = ibind;
+            }
+            else if(visualElement is ProgressBar pgb)
+            {
+                pgb.binding = ibind;
+            }
+            else
+            {
+                throw new Exception("UTKSharp : The UIElement does not implement binding!");
+            }
+            
             return this;
         }
     }

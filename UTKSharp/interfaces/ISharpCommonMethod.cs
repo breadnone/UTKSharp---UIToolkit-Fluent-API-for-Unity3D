@@ -29,11 +29,11 @@ namespace UITKsharp
     public interface ISharpCommonMethod
     {
         public VisualElement visualElement{get;set;}
-        public int GetChildCount()
+        public int ChildCount()
         {
             return visualElement.childCount;
         }
-        public IEnumerable<VisualElement> GetChildren()
+        public IEnumerable<VisualElement> Children()
         {
             return visualElement.Children();
         }
@@ -65,6 +65,7 @@ namespace UITKsharp
 
             visualElement.Clear();
         }
+
         public bool IsParentContainsChild(VisualElement child)
         {
             if (visualElement == null || child == null)
