@@ -54,7 +54,7 @@ Button
 Image  
 RadioButton  
 ProgressBar  
-CustomSplitView  
+Custom SplitView  
 (More to come)  
 
 # Installation  
