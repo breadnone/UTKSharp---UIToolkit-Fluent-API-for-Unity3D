@@ -375,6 +375,7 @@ namespace UITKsharp
             UISharpID = Guid.NewGuid().ToString() + UnityEngine.Random.Range(int.MinValue, int.MaxValue);
             visualElement = visualelement;
         }
+
         /// <summary>Color of VisualElement.</summary>
         /// <param name="color">Type of alignment.</param>
         public UISharp Color(StyleColor color)
@@ -385,6 +386,7 @@ namespace UITKsharp
             visualElement.style.color = color;
             return this;
         }
+
         /// <summary>Set content alignment of VisualElement.</summary>
         /// <param name="alignment">Type of alignment.</param>
         public UISharp AlignContent(Align alignment = Align.Auto)
@@ -503,6 +505,7 @@ namespace UITKsharp
             visualElement.style.maxWidth = value;
             return this;
         }
+        
         /// <summary>Sets minimum width of style.minWidth property to a VisualElement.</summary>
         /// <param name="value">New minWidth value to be assigned.</param>
         public UISharp MinWidth(StyleLength value)
