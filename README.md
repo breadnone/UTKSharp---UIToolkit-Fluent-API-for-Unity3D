@@ -13,13 +13,18 @@ Edit-mode(Custom editor) : UITKSharp.Editor
 **UIElement**<br>`UTKSharp.boxElement(new Box()).Width(100, dynamic: true).Height(50, true);`<br/>  
 **Making Templates**(experimental)   
 ```
-        var template = UTKSharp.style(new VisualElement()).Name("myTemplate").Height(100, true).Width(200);
-        UTKsharp.createTemplate(template);
+        //Create in Edit-mode
+        var template = UTKSharp.style(new VisualElement()).Height(100, true).Width(200);
+        template.CreateTemplate("myTemplate");
         
+        //Use in runtime
+        template.UseTemplate("myTemplate");
+        
+        //Use in Edit-mode (for custom editor)
         //Use the template as shown below by finding the name of the VisualElement.
-        UTKSharp.style(new VisualElement()).UseTempalte("myTemplate");
+        UTKSharp.style(new VisualElement()).CopyTemplate("myTemplate");
         
-        //NOTE: Templating on parented VisualElements aren't supported(Not tested). Must be single instance without parent/child.
+        //NOTE: Nesting templating aren't supported. Must be single instance without parent/child.
 ```
 
 **Constructing layout with `UTKSharp.construct() & UTKSharp.customSplitView()` methods**
