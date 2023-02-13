@@ -26,12 +26,11 @@ namespace UITKsharp
         }
         public static bool IsRuntime(){return templates != null;}
     }
-    class MyClass
+    class UTKInitClass
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void OnRuntimeMethodLoad()
         {
-            Debug.Log("After Scene is loaded and game is running");
             UTKManager.InitTemplates();
         }
     }
