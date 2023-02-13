@@ -15,6 +15,6 @@ public static class PlayModeStateChangedExample
 
     private static void LogPlayModeState(PlayModeStateChange state)
     {
-        Debug.Log(state);
+        
     }
 }
