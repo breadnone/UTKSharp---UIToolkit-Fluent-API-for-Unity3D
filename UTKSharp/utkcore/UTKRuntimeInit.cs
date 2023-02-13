@@ -11,7 +11,8 @@ namespace UITKsharp
         public static void InitTemplates()
         {
             var ins = Resources.Load<SharpStyleClass>("utk--global-templates");
-            Debug.Log(ins.templates.Count);
+            
+            if(ins != null)
             templates = ins;
         }
         public static (IStyle style, SharpStyleClass sharpStyle) GetTemplate(string templateName)
